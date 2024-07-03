@@ -138,6 +138,19 @@
                 estimatedSize: "",
               },
               {
+                id: "95f58701-6576-4fd0-8f6b-6f3c720ec3d9",
+                name: "numberOfProjectsAllowed",
+                datatype: "Number",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
                 id: "ee88090a-ba47-4b49-b144-0e82699cc734",
                 name: "passwordChangedAt",
                 datatype: "Date",
@@ -202,11 +215,26 @@
                 options: "",
                 estimatedSize: "",
               },
+              {
+                id: "9d2a1fe8-a11e-453c-9982-e4d593ed24a0",
+                name: "subscription",
+                datatype: "Array",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
             ],
             relations: [
               "4dbdba9b-69d5-4007-97b6-69c56a57e099",
               "af587830-5b1b-4617-845f-98fa6f5d9bcb",
               "826b248c-16c7-4305-afe4-b1fdf7405a67",
+              "51a1ae1a-1a63-4417-928d-18b65323f2d0",
+              "5a80b967-d12f-4f8c-a654-d8b99a57ff43",
             ],
             lines: [],
             keys: [
@@ -240,6 +268,17 @@
                   {
                     id: "b50f77e6-e050-4b13-8062-5e2e8dca3f45",
                     colid: "8e6288c7-a33b-453b-a197-c2e28e1ad152",
+                  },
+                ],
+              },
+              {
+                id: "c0f591c7-4fcf-4322-a4f7-b3fc70941079",
+                isPk: false,
+                name: "Users_ai_3",
+                cols: [
+                  {
+                    id: "998bdc77-b5e6-41d2-ad24-6c40a63d4992",
+                    colid: "9d2a1fe8-a11e-453c-9982-e4d593ed24a0",
                   },
                 ],
               },
@@ -367,6 +406,19 @@
                 estimatedSize: "",
                 fk: false,
               },
+              {
+                id: "d8c12c21-a2f3-411e-a1b1-1a13c9647040",
+                name: "trashed",
+                datatype: "Boolean",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
             ],
             relations: [
               "4dbdba9b-69d5-4007-97b6-69c56a57e099",
@@ -491,6 +543,19 @@
                 id: "b5937a45-3ca2-491b-b901-42dcbe6e2c2e",
                 name: "attachments",
                 datatype: "Array",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "861b3a7a-3da0-45e6-b387-0530c612a628",
+                name: "deadline",
+                datatype: "Date",
                 param: "",
                 pk: false,
                 nn: false,
@@ -849,6 +914,186 @@
             afterScript: "",
             others: "",
           },
+          "c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9": {
+            id: "c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9",
+            visible: true,
+            name: "Subscriptions",
+            desc: "Collection for storing user subscription details",
+            estimatedSize: "",
+            cols: [
+              {
+                id: "2f24b8e6-bab6-41b5-95c8-6c92869765b8",
+                name: "_id",
+                datatype: "ObjectId",
+                param: "",
+                pk: true,
+                nn: true,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+                fk: true,
+              },
+              {
+                id: "b8308ac7-53d3-4b2a-b4c9-c0b67bc7d5aa",
+                name: "orderId",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "553e6ea6-85dd-441e-a27c-f663c9c0016a",
+                name: "date",
+                datatype: "Date",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "c5170a81-68d7-4c6b-9f48-18cf75fc2ce6",
+                name: "stripePaymentId",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+            ],
+            relations: ["51a1ae1a-1a63-4417-928d-18b65323f2d0"],
+            lines: [],
+            keys: [
+              {
+                id: "7145f1e3-fd9f-422c-9de3-74aec374bc99",
+                name: "Primary",
+                isPk: true,
+                cols: [
+                  {
+                    id: "4dca5417-35fe-4b51-91a5-059e6f4924d8",
+                    colid: "2f24b8e6-bab6-41b5-95c8-6c92869765b8",
+                  },
+                ],
+              },
+            ],
+            indexes: [],
+            embeddable: false,
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            beforeScript: "",
+            afterScript: "",
+            others: "",
+          },
+          "b137954d-ebfc-40ec-be07-9ad274a384d4": {
+            id: "b137954d-ebfc-40ec-be07-9ad274a384d4",
+            visible: true,
+            name: "Notifications",
+            desc: "Collections for storing all the notifications for certain user",
+            estimatedSize: "",
+            cols: [
+              {
+                id: "b8337686-25e5-4131-a9f1-074ff8f4db56",
+                name: "_id",
+                datatype: "ObjectId",
+                param: "",
+                pk: true,
+                nn: true,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "009733ca-17db-42c8-aa5c-0d8d06a41f14",
+                name: "time",
+                datatype: "Date",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "52bc2901-10bb-4f4b-972b-8adc0dd2ca27",
+                name: "message",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "0a22ecb5-c370-47b8-927f-b65a5301d156",
+                name: "user",
+                datatype: "ObjectId",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+            ],
+            relations: ["5a80b967-d12f-4f8c-a654-d8b99a57ff43"],
+            lines: [],
+            keys: [
+              {
+                id: "17f6df84-6ee8-4626-958d-3318e853452f",
+                name: "Primary",
+                isPk: true,
+                cols: [
+                  {
+                    id: "ac3a206a-7475-44f0-ad34-c2786f1e6735",
+                    colid: "b8337686-25e5-4131-a9f1-074ff8f4db56",
+                  },
+                ],
+              },
+              {
+                id: "7ffdc1a7-e6ce-444e-9d77-5c67dad20e61",
+                isPk: false,
+                name: "Notifications_ai_1",
+                cols: [
+                  {
+                    id: "ed6dda39-50a8-48ad-b5e7-cda64bbcb833",
+                    colid: "0a22ecb5-c370-47b8-927f-b65a5301d156",
+                  },
+                ],
+              },
+            ],
+            indexes: [],
+            embeddable: false,
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            beforeScript: "",
+            afterScript: "",
+            others: "",
+          },
         },
         References: {
           "4dbdba9b-69d5-4007-97b6-69c56a57e099": {
@@ -971,7 +1216,7 @@
             c_mp: "true",
             c_mch: "true",
             c_p: "one",
-            c_ch: "many",
+            c_ch: "one",
             c_cp: "",
             c_cch: "",
             cols: [
@@ -1060,6 +1305,60 @@
                 id: "b18f2174-c300-441b-a5bb-cc65c0142f78",
                 parentcol: "da1a0e23-bde8-454e-b000-9cca6417b54f",
                 childcol: "c7d083ca-254e-4091-af65-b5bef660081c",
+              },
+            ],
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            relationColor: "transparent",
+          },
+          "51a1ae1a-1a63-4417-928d-18b65323f2d0": {
+            id: "51a1ae1a-1a63-4417-928d-18b65323f2d0",
+            visible: true,
+            name: "subscription__id",
+            desc: "",
+            type: "identifying",
+            parent_key: "c0f591c7-4fcf-4322-a4f7-b3fc70941079",
+            parent: "ddc8169b-05fb-4987-b92d-3a932924977c",
+            child: "c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9",
+            c_mp: "true",
+            c_mch: "true",
+            c_p: "one",
+            c_ch: "many",
+            c_cp: "",
+            c_cch: "",
+            cols: [
+              {
+                id: "93b94ac9-7c7f-4899-be52-04fa1c459df7",
+                parentcol: "9d2a1fe8-a11e-453c-9982-e4d593ed24a0",
+                childcol: "2f24b8e6-bab6-41b5-95c8-6c92869765b8",
+              },
+            ],
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            relationColor: "transparent",
+          },
+          "5a80b967-d12f-4f8c-a654-d8b99a57ff43": {
+            id: "5a80b967-d12f-4f8c-a654-d8b99a57ff43",
+            visible: true,
+            name: "user__id",
+            desc: "user key in Notifications collections holds the objectId of Users document. It we want to get all the notifications for the for a certain then we need to use virtual populate.",
+            type: "identifying",
+            parent_key: "7ffdc1a7-e6ce-444e-9d77-5c67dad20e61",
+            parent: "b137954d-ebfc-40ec-be07-9ad274a384d4",
+            child: "ddc8169b-05fb-4987-b92d-3a932924977c",
+            c_mp: "true",
+            c_mch: "true",
+            c_p: "many",
+            c_ch: "one",
+            c_cp: "",
+            c_cch: "",
+            cols: [
+              {
+                id: "26abc0e1-f879-4acd-be8f-a028d3880d8f",
+                parentcol: "0a22ecb5-c370-47b8-927f-b65a5301d156",
+                childcol: "574f5744-36c3-4cb3-9d97-1a9e02fb6431",
               },
             ],
             generate: true,
@@ -1392,10 +1691,10 @@
                     id="selector"
                     style="
                       width: 0px;
-                      height: 1px;
+                      height: 2px;
                       display: none;
-                      top: 248px;
-                      left: 901px;
+                      top: 266px;
+                      left: 575px;
                     "
                   ></div>
                   <div
@@ -1408,7 +1707,7 @@
                     style="
                       position: absolute;
                       left: 45px;
-                      top: 93px;
+                      top: 83px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -1416,12 +1715,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: 279px; height: 264px">
+                    <div style="width: 285px; height: 298px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="contentddc8169b-05fb-4987-b92d-3a932924977c"
                         data-object-id="ddc8169b-05fb-4987-b92d-3a932924977c"
-                        style="width: 279px; height: 264px; display: flex"
+                        style="width: 285px; height: 298px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -1593,6 +1892,22 @@
                               <div></div>
                             </div>
                             <div
+                              id="95f58701-6576-4fd0-8f6b-6f3c720ec3d9"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>numberOfProjectsAllowed</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Number</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
                               id="ee88090a-ba47-4b49-b144-0e82699cc734"
                               class="dRow im-t-r im-t-r-MONGOOSE"
                             >
@@ -1678,9 +1993,29 @@
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
                             </div>
+                            <div
+                              id="9d2a1fe8-a11e-453c-9982-e4d593ed24a0"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/ak.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-AI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>subscription</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Array</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
                           </div>
-
-                          <div></div>
                         </div>
                         <div class="im-bottom-box">
                           <div
@@ -1710,8 +2045,8 @@
                     id="ddbfb893-9b15-42d5-914c-ca6c42c0db81"
                     style="
                       position: absolute;
-                      left: 435px;
-                      top: 106px;
+                      left: 421px;
+                      top: 275px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -1719,12 +2054,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: 280px; height: 173px">
+                    <div style="width: 280px; height: 190px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="contentddbfb893-9b15-42d5-914c-ca6c42c0db81"
                         data-object-id="ddbfb893-9b15-42d5-914c-ca6c42c0db81"
-                        style="width: 280px; height: 173px; display: flex"
+                        style="width: 280px; height: 190px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -1897,6 +2232,22 @@
                                 ><span>&nbsp;&nbsp;</span>
                               </div>
                               <div class="dCol im-t-c im-mini">Array</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="d8c12c21-a2f3-411e-a1b1-1a13c9647040"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>trashed</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Boolean</div>
                               <div class="dCol im-t-c im-mini"></div>
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
@@ -2094,6 +2445,22 @@
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
                             </div>
+                            <div
+                              id="861b3a7a-3da0-45e6-b387-0530c612a628"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>deadline</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Date</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
                           </div>
                         </div>
                         <div class="im-bottom-box">
@@ -2107,17 +2474,6 @@
                             </div>
                           </div>
                         </div>
-                        <i
-                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
-                          style="
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            right: 0px;
-                            bottom: 0px;
-                            cursor: se-resize;
-                          "
-                        ></i>
                       </div>
                     </div>
                   </div>
@@ -2125,8 +2481,8 @@
                     id="8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
                     style="
                       position: absolute;
-                      left: 439px;
-                      top: 389px;
+                      left: 405px;
+                      top: 513px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2247,6 +2603,8 @@
                               <div></div>
                             </div>
                           </div>
+
+                          <div></div>
                         </div>
                         <div class="im-bottom-box">
                           <div
@@ -2406,17 +2764,6 @@
                             </div>
                           </div>
                         </div>
-                        <i
-                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
-                          style="
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            right: 0px;
-                            bottom: 0px;
-                            cursor: se-resize;
-                          "
-                        ></i>
                       </div>
                     </div>
                   </div>
@@ -2424,8 +2771,8 @@
                     id="6e0d6d33-58b9-42b1-a6d0-f14fa961afd0"
                     style="
                       position: absolute;
-                      left: 780px;
-                      top: 50px;
+                      left: 726px;
+                      top: 53px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2571,6 +2918,303 @@
                             <div style="color: rgb(238, 238, 238)">
                               This collection is going to store the user
                               comments for specific task
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
+                          style="
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: se-resize;
+                          "
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                    style="
+                      position: absolute;
+                      left: 45px;
+                      top: 413px;
+                      touch-action: none;
+                      width: max-content;
+                      height: max-content;
+                      padding-bottom: 45px;
+                      padding-right: 45px;
+                    "
+                  >
+                    <div style="width: 220px; height: 100px">
+                      <div
+                        class="t tMoon im-z-index-8"
+                        id="contentc6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                        data-object-id="c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                        style="width: 220px; height: 100px; display: flex"
+                      >
+                        <div
+                          class="dGraphicsHeader dGraphicsHeaderMoon"
+                          style="background: rgb(3, 169, 244)"
+                        >
+                          <div class="dGraphicsLeftTop">
+                            <i
+                              class="im-icon-12 im-icon-Type"
+                              style="color: rgb(3, 169, 244)"
+                            ></i>
+                          </div>
+                          <div
+                            data-table-id="c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                            class="dTableName"
+                            style="color: rgb(255, 255, 255)"
+                          >
+                            Subscriptions
+                          </div>
+                          <div class="dGraphicsRightTop im-pointer">
+                            <i
+                              class="im-pointer im-icon-DotsHorizontal16 im-icon-12"
+                              style="color: rgb(255, 255, 255)"
+                            ></i>
+                          </div>
+                        </div>
+                        <div
+                          class="dCols"
+                          id="dcc6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                        >
+                          <div class="im-table-columns-displayed">
+                            <div
+                              id="2f24b8e6-bab6-41b5-95c8-6c92869765b8"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/linked.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-L"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>_id</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini">NN</div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="b8308ac7-53d3-4b2a-b4c9-c0b67bc7d5aa"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>orderId</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="553e6ea6-85dd-441e-a27c-f663c9c0016a"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>date</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Date</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="c5170a81-68d7-4c6b-9f48-18cf75fc2ce6"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>stripePaymentId</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="im-bottom-box">
+                          <div
+                            class="im-table-descriptions-hidden"
+                            id="dcdcontentc6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                          >
+                            <div style="color: rgb(238, 238, 238)">
+                              Collection for storing user subscription details
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
+                          style="
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: se-resize;
+                          "
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    style="
+                      position: absolute;
+                      left: 444px;
+                      top: 91px;
+                      touch-action: none;
+                      width: max-content;
+                      height: max-content;
+                      padding-bottom: 45px;
+                      padding-right: 45px;
+                    "
+                  >
+                    <div style="width: 229px; height: 108px">
+                      <div
+                        class="t tMoon im-z-index-8"
+                        id="contentb137954d-ebfc-40ec-be07-9ad274a384d4"
+                        data-object-id="b137954d-ebfc-40ec-be07-9ad274a384d4"
+                        style="width: 229px; height: 108px; display: flex"
+                      >
+                        <div
+                          class="dGraphicsHeader dGraphicsHeaderMoon"
+                          style="background: rgb(3, 169, 244)"
+                        >
+                          <div class="dGraphicsLeftTop">
+                            <i
+                              class="im-icon-12 im-icon-Type"
+                              style="color: rgb(3, 169, 244)"
+                            ></i>
+                          </div>
+                          <div
+                            data-table-id="b137954d-ebfc-40ec-be07-9ad274a384d4"
+                            class="dTableName"
+                            style="color: rgb(255, 255, 255)"
+                          >
+                            Notifications
+                          </div>
+                          <div class="dGraphicsRightTop im-pointer">
+                            <i
+                              class="im-pointer im-icon-DotsHorizontal16 im-icon-12"
+                              style="color: rgb(255, 255, 255)"
+                            ></i>
+                          </div>
+                        </div>
+                        <div
+                          class="dCols"
+                          id="dcb137954d-ebfc-40ec-be07-9ad274a384d4"
+                        >
+                          <div class="im-table-columns-displayed">
+                            <div
+                              id="b8337686-25e5-4131-a9f1-074ff8f4db56"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/pk.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-PI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>_id</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini">NN</div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="009733ca-17db-42c8-aa5c-0d8d06a41f14"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>time</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Date</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="52bc2901-10bb-4f4b-972b-8adc0dd2ca27"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>message</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="0a22ecb5-c370-47b8-927f-b65a5301d156"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/ak.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-AI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>user</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="im-bottom-box">
+                          <div
+                            class="im-table-descriptions-hidden"
+                            id="dcdcontentb137954d-ebfc-40ec-be07-9ad274a384d4"
+                          >
+                            <div style="color: rgb(238, 238, 238)">
+                              Collections for storing all the notifications for
+                              certain user
                             </div>
                           </div>
                         </div>
@@ -3779,14 +4423,14 @@
                           <path
                             id="rb4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             class="relation-diagram-bg"
-                            d="M435 142L417 142L417 142Q395 143 380 199Q365 255 342 255L342 255L324 255"
+                            d="M421 311L403 311L403 311Q388 311 376 278Q364 245 348 245L348 245L330 245"
                           ></path>
                           <path
                             id="r4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M324,255 l 18,0 l0,0  Q365,255 380,199  T417,142  l0,0  L435,142"
+                            d="M330,245 l 18,0 l0,0  Q364,245 376,278  T403,311  l0,0  L421,311"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt4dbdba9b-69d5-4007-97b6-69c56a57e099">
@@ -3862,14 +4506,14 @@
                           <path
                             id="rbaf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             class="relation-diagram-bg"
-                            d="M435 142L417 142L417 142Q395 143 380 235Q365 327 342 327L342 327L324 327"
+                            d="M421 311L403 311L403 311Q388 311 376 323Q364 335 348 335L348 335L330 335"
                           ></path>
                           <path
                             id="raf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M324,327 l 18,0 l0,0  Q365,327 380,235  T417,142  l0,0  L435,142"
+                            d="M330,335 l 18,0 l0,0  Q364,335 376,323  T403,311  l0,0  L421,311"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rtaf587830-5b1b-4617-845f-98fa6f5d9bcb">
@@ -3945,14 +4589,14 @@
                           <path
                             id="rb5c287f2b-46c8-490b-85a8-b91fb14ba70c"
                             class="relation-diagram-bg"
-                            d="M819 238L801 238L801 238Q780 238 767 226Q754 214 733 214L733 214L715 214"
+                            d="M819 238L801 238L801 238Q776 239 760 311Q744 383 719 383L719 383L701 383"
                           ></path>
                           <path
                             id="r5c287f2b-46c8-490b-85a8-b91fb14ba70c"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M715,214 l 18,0 l0,0  Q754,214 767,226  T801,238  l0,0  L819,238"
+                            d="M701,383 l 18,0 l0,0  Q744,383 760,311  T801,238  l0,0  L819,238"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt5c287f2b-46c8-490b-85a8-b91fb14ba70c">
@@ -4028,14 +4672,14 @@
                           <path
                             id="rb93b1e9ef-6149-4371-b81c-a4a1540d5dea"
                             class="relation-diagram-bg"
-                            d="M685 425L703 425L703 425Q730 426 752 368Q774 310 801 310L801 310L819 310"
+                            d="M651 549L669 549L669 549Q707 550 735 430Q763 310 801 310L801 310L819 310"
                           ></path>
                           <path
                             id="r93b1e9ef-6149-4371-b81c-a4a1540d5dea"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M819,310 l -18,0 l0,0  Q774,310 752,368  T703,425  l0,0  L685,425"
+                            d="M819,310 l -18,0 l0,0  Q763,310 735,430  T669,549  l0,0  L651,549"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt93b1e9ef-6149-4371-b81c-a4a1540d5dea">
@@ -4111,14 +4755,14 @@
                           <path
                             id="rb826b248c-16c7-4305-afe4-b1fdf7405a67"
                             class="relation-diagram-bg"
-                            d="M324 129L342 129L342 129Q363 129 382 304Q401 479 421 479L421 479L439 479"
+                            d="M330 119L348 119L348 119Q356 119 368 361Q380 603 387 603L387 603L405 603"
                           ></path>
                           <path
                             id="r826b248c-16c7-4305-afe4-b1fdf7405a67"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
-                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M439,479 l -18,0 l0,0  Q401,479 382,304  T342,129  l0,0  L324,129"
+                            d="M405,603 l -18,0 l0,0  Q380,603 368,361  T348,119  l0,0  L330,119"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt826b248c-16c7-4305-afe4-b1fdf7405a67">
@@ -4194,14 +4838,14 @@
                           <path
                             id="rbe223ce06-5966-44e3-aae0-5668e06b68d7"
                             class="relation-diagram-bg"
-                            d="M845 459L827 459L827 459Q798 460 780 346Q762 232 733 232L733 232L715 232"
+                            d="M845 459L827 459L827 459Q793 459 773 430Q753 401 719 401L719 401L701 401"
                           ></path>
                           <path
                             id="re223ce06-5966-44e3-aae0-5668e06b68d7"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M715,232 l 18,0 l0,0  Q762,232 780,346  T827,459  l0,0  L845,459"
+                            d="M701,401 l 18,0 l0,0  Q753,401 773,430  T827,459  l0,0  L845,459"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rte223ce06-5966-44e3-aae0-5668e06b68d7">
@@ -4360,14 +5004,14 @@
                           <path
                             id="rb12e65322-b515-476b-951d-1582a744550a"
                             class="relation-diagram-bg"
-                            d="M1038 238L1056 238L1074 238L1074 158L1016 158L998 158"
+                            d="M1038 238L1056 238L1074 238L1074 161L962 161L944 161"
                           ></path>
                           <path
                             id="r12e65322-b515-476b-951d-1582a744550a"
                             marker-start="url(#cardinality-parent-mandatory-many-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M998,158 l18,0 L1074,158 L1074,238 L1056,238 L1038,238"
+                            d="M944,161 l18,0 L1074,161 L1074,238 L1056,238 L1038,238"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt12e65322-b515-476b-951d-1582a744550a">
@@ -4438,6 +5082,158 @@
                           </text>
                         </g>
                       </g>
+                      <g>
+                        <g>
+                          <path
+                            id="rb51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                            class="relation-diagram-bg"
+                            d="M45 449L27 449L9 449L9 371L27 371L45 371"
+                          ></path>
+                          <path
+                            id="r51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
+                            class="im-rel-path forcedLineColor"
+                            d="M45,371 l-18,0 L9,371 L9,449 L27,449 L45,449"
+                            style="stroke: rgb(238, 238, 238)"
+                          ></path>
+                          <text id="rt51a1ae1a-1a63-4417-928d-18b65323f2d0">
+                            <textPath
+                              xlink:href="#r51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                              startOffset="50%"
+                            >
+                              <tspan
+                                dy="7"
+                                dx="-8"
+                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
+                                style="fill: rgb(51, 51, 51)"
+                              >
+                                
+                              </tspan>
+                              <tspan
+                                id="mid-51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                                dy="0"
+                                dx="-16"
+                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
+                                style="fill: rgb(238, 238, 238)"
+                              >
+                                
+                              </tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cp51a1ae1a-1a63-4417-928d-18b65323f2d0">
+                            <textPath
+                              xlink:href="#r51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text id="rb_cch51a1ae1a-1a63-4417-928d-18b65323f2d0">
+                            <textPath
+                              xlink:href="#r51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                          <text id="rtb_cp51a1ae1a-1a63-4417-928d-18b65323f2d0">
+                            <textPath
+                              xlink:href="#rb51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text
+                            id="rtb_cch51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                          >
+                            <textPath
+                              xlink:href="#rb51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                        </g>
+                      </g>
+                      <g>
+                        <g>
+                          <path
+                            id="rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                            class="relation-diagram-bg"
+                            d="M330 119L348 119L348 119Q368 119 387 150Q406 181 426 181L426 181L444 181"
+                          ></path>
+                          <path
+                            id="r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                            marker-start="url(#cardinality-parent-mandatory-many-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
+                            class="im-rel-path forcedLineColor"
+                            d="M444,181 l -18,0 l0,0  Q406,181 387,150  T348,119  l0,0  L330,119"
+                            style="stroke: rgb(238, 238, 238)"
+                          ></path>
+                          <text id="rt5a80b967-d12f-4f8c-a654-d8b99a57ff43">
+                            <textPath
+                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                              startOffset="50%"
+                            >
+                              <tspan
+                                dy="7"
+                                dx="-8"
+                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
+                                style="fill: rgb(51, 51, 51)"
+                              >
+                                
+                              </tspan>
+                              <tspan
+                                id="mid-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                                dy="0"
+                                dx="-16"
+                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
+                                style="fill: rgb(238, 238, 238)"
+                              >
+                                
+                              </tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cp5a80b967-d12f-4f8c-a654-d8b99a57ff43">
+                            <textPath
+                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text id="rb_cch5a80b967-d12f-4f8c-a654-d8b99a57ff43">
+                            <textPath
+                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                          <text id="rtb_cp5a80b967-d12f-4f8c-a654-d8b99a57ff43">
+                            <textPath
+                              xlink:href="#rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                              startOffset="0%"
+                            >
+                              <tspan
+                                startOffset="100%"
+                                class="rCardinality"
+                                x="40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text
+                            id="rtb_cch5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                          >
+                            <textPath
+                              xlink:href="#rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                              text-anchor="end"
+                              startOffset="100%"
+                            >
+                              <tspan
+                                startOffset="0%"
+                                class="rCardinality"
+                                x="-40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                        </g>
+                      </g>
                     </g>
                     <g></g>
                     <g></g>
@@ -4484,7 +5280,7 @@
               <div class="mm-subtitle">Report</div>
               <div class="mm-d-ver">
                 <div class="mm-d-c">Generated</div>
-                <div class="mm-d-v-l">7/2/2024 | 9:03:02 PM</div>
+                <div class="mm-d-v-l">7/3/2024 | 12:36:15 PM</div>
               </div>
             </div>
             <!--  wrapper end mm-subsection - end -->
@@ -4574,6 +5370,13 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">numberOfProjectsAllowed</div>
+                <div class="mm-d-v">Number</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">passwordChangedAt</div>
                 <div class="mm-d-v">Date</div>
                 <div class="mm-d-v"></div>
@@ -4607,6 +5410,13 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">subscription</div>
+                <div class="mm-d-v">Array</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -4629,6 +5439,12 @@
               <div class="mm-d-hor">
                 <div class="mm-d-c">Property in Users_ai_2</div>
                 <div class="mm-d-v">projectIdAssigned</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+              <div class="mm-d-v mm-d-v-s">Users_ai_3</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Users_ai_3</div>
+                <div class="mm-d-v">subscription</div>
               </div>
               <!--  wrapper end mm-d-hor - end -->
             </div>
@@ -4691,6 +5507,46 @@
                   <a
                     href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
                     >TaskMembers</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                    >subscription__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                    >Subscriptions</a
+                  >
+                </div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                    >user__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
                   >
                 </div>
                 <div class="mm-d-v">
@@ -4779,6 +5635,13 @@
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">Users_projectsCreated</div>
                 <div class="mm-d-v">Array</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">trashed</div>
+                <div class="mm-d-v">Boolean</div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
@@ -4960,6 +5823,13 @@
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">attachments</div>
                 <div class="mm-d-v">Array</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">deadline</div>
+                <div class="mm-d-v">Date</div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
@@ -5438,6 +6308,206 @@
             </div>
             <!--  wrapper end mm-subsection - end -->
           </div>
+          <div
+            id="detail-itm-c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">Subscriptions</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                Collection for storing user subscription details
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Properties</div>
+              <div class="mm-d-g-5">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Data type</div>
+                <div class="mm-d-c">Param</div>
+                <div class="mm-d-c">Key</div>
+                <div class="mm-d-c">Not Null</div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">_id</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">orderId</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">date</div>
+                <div class="mm-d-v">Date</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">stripePaymentId</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+              </div>
+              <!--  wrapper end mm-d-g-5 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Keys</div>
+              <div class="mm-d-v mm-d-v-s">Primary</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Primary</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">References</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                    >subscription__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                    >Subscriptions</a
+                  >
+                </div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+          <div
+            id="detail-itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">Notifications</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                Collections for storing all the notifications for certain user
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Properties</div>
+              <div class="mm-d-g-5">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Data type</div>
+                <div class="mm-d-c">Param</div>
+                <div class="mm-d-c">Key</div>
+                <div class="mm-d-c">Not Null</div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">_id</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">time</div>
+                <div class="mm-d-v">Date</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">message</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">user</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+              </div>
+              <!--  wrapper end mm-d-g-5 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Keys</div>
+              <div class="mm-d-v mm-d-v-s">Primary</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Primary</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+              <div class="mm-d-v mm-d-v-s">Notifications_ai_1</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Notifications_ai_1</div>
+                <div class="mm-d-v">user</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">References</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                    >user__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
         </div>
         <!--  section Schemas - end --><!-- section Types - start -->
         <div class="mm-section" id="mm-section-Types"></div>
@@ -5751,7 +6821,7 @@
                 </div>
                 <div class="mm-d-c">Cardinality type:</div>
                 <div class="mm-d-v">One to</div>
-                <div class="mm-d-v">many</div>
+                <div class="mm-d-v">one</div>
                 <div class="mm-d-c">Ordinality:</div>
                 <div class="mm-d-v">Mandatory</div>
                 <div class="mm-d-v">Mandatory</div>
@@ -5966,6 +7036,130 @@
                 <div class="mm-d-c">Property in Tasks</div>
                 <div class="mm-d-v mm-d-v-s">Comments_ai_1</div>
                 <div class="mm-d-v">task</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+          <div
+            id="detail-itm-51a1ae1a-1a63-4417-928d-18b65323f2d0"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">subscription__id</div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-51a1ae1a-1a63-4417-928d-18b65323f2d0"
+                    >subscription__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
+                    >Subscriptions</a
+                  >
+                </div>
+                <div class="mm-d-c">Cardinality type:</div>
+                <div class="mm-d-v">One to</div>
+                <div class="mm-d-v">many</div>
+                <div class="mm-d-c">Ordinality:</div>
+                <div class="mm-d-v">Mandatory</div>
+                <div class="mm-d-v">Mandatory</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Key and properties</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Key name</div>
+                <div class="mm-d-c">Property in Users</div>
+                <div class="mm-d-c">Property in Subscriptions</div>
+                <div class="mm-d-v mm-d-v-s">Users_ai_3</div>
+                <div class="mm-d-v">subscription</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+          <div
+            id="detail-itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">user__id</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                user key in Notifications collections holds the objectId of
+                Users document. It we want to get all the notifications for the
+                for a certain then we need to use virtual populate.
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
+                    >user__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-c">Cardinality type:</div>
+                <div class="mm-d-v">Many to</div>
+                <div class="mm-d-v">one</div>
+                <div class="mm-d-c">Ordinality:</div>
+                <div class="mm-d-v">Mandatory</div>
+                <div class="mm-d-v">Mandatory</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Key and properties</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Key name</div>
+                <div class="mm-d-c">Property in Notifications</div>
+                <div class="mm-d-c">Property in Users</div>
+                <div class="mm-d-v mm-d-v-s">Notifications_ai_1</div>
+                <div class="mm-d-v">user</div>
                 <div class="mm-d-v">_id</div>
               </div>
               <!--  wrapper end mm-d-g-3 - end -->
