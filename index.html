@@ -232,7 +232,6 @@
             relations: [
               "4dbdba9b-69d5-4007-97b6-69c56a57e099",
               "af587830-5b1b-4617-845f-98fa6f5d9bcb",
-              "826b248c-16c7-4305-afe4-b1fdf7405a67",
               "51a1ae1a-1a63-4417-928d-18b65323f2d0",
               "5a80b967-d12f-4f8c-a654-d8b99a57ff43",
             ],
@@ -379,23 +378,9 @@
                 estimatedSize: "",
               },
               {
-                id: "3ac7dac8-3d35-478e-88e6-ada1eaa88642",
-                name: "Users__id",
-                datatype: "ObjectId",
-                param: "",
-                pk: false,
-                nn: true,
-                list: false,
-                comment: "",
-                data: "",
-                options: "",
-                estimatedSize: "",
-                fk: false,
-              },
-              {
-                id: "e2238f9d-d855-4e3d-8a01-068c3d1cc503",
-                name: "Users_projectsCreated",
-                datatype: "Array",
+                id: "d8c12c21-a2f3-411e-a1b1-1a13c9647040",
+                name: "trashed",
+                datatype: "Boolean",
                 param: "",
                 pk: false,
                 nn: false,
@@ -404,12 +389,11 @@
                 data: "",
                 options: "",
                 estimatedSize: "",
-                fk: false,
               },
               {
-                id: "d8c12c21-a2f3-411e-a1b1-1a13c9647040",
-                name: "trashed",
-                datatype: "Boolean",
+                id: "7f13ddfb-2cf4-4cba-85b3-7d57c2087f77",
+                name: "members",
+                datatype: "Array",
                 param: "",
                 pk: false,
                 nn: false,
@@ -423,8 +407,9 @@
             relations: [
               "4dbdba9b-69d5-4007-97b6-69c56a57e099",
               "af587830-5b1b-4617-845f-98fa6f5d9bcb",
-              "5c287f2b-46c8-490b-85a8-b91fb14ba70c",
               "e223ce06-5966-44e3-aae0-5668e06b68d7",
+              "36437680-47ce-4cb7-854f-590b5e9a3ae1",
+              "acf41798-bccf-4ea9-8f60-9da593439f46",
             ],
             lines: [],
             keys: [
@@ -453,6 +438,17 @@
                   {
                     id: "513c5500-77a8-4ad6-b2c0-14c925d0d5d3",
                     colid: "338aa21d-5e0c-42ec-b47c-c9415bfc9789",
+                  },
+                ],
+              },
+              {
+                id: "cdffea48-3d33-44f6-aad9-39d36d5869bc",
+                isPk: false,
+                name: "Projects_ai_3",
+                cols: [
+                  {
+                    id: "86176688-c099-4633-a64a-e8ca3f56a1ad",
+                    colid: "7f13ddfb-2cf4-4cba-85b3-7d57c2087f77",
                   },
                 ],
               },
@@ -565,12 +561,37 @@
                 options: "",
                 estimatedSize: "",
               },
+              {
+                id: "415c192a-a48a-4247-a3ad-290b7f8e1477",
+                name: "projectId",
+                datatype: "ObjectId",
+                param: "",
+                pk: false,
+                nn: true,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "4ddc579d-b5d1-4572-a8d0-73afa85e84fa",
+                name: "priorityLevel",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
             ],
             relations: [
-              "5c287f2b-46c8-490b-85a8-b91fb14ba70c",
-              "93b1e9ef-6149-4371-b81c-a4a1540d5dea",
               "a6a752bd-f3dd-489a-8ee5-eb472a13ed5e",
               "12e65322-b515-476b-951d-1582a744550a",
+              "36437680-47ce-4cb7-854f-590b5e9a3ae1",
             ],
             lines: [],
             keys: [
@@ -613,102 +634,14 @@
                 name: "Tasks_ai_3",
                 cols: [],
               },
-            ],
-            indexes: [],
-            embeddable: false,
-            generate: true,
-            generateCustomCode: true,
-            customCode: "",
-            beforeScript: "",
-            afterScript: "",
-            others: "",
-          },
-          "8c13ec93-0f19-448c-b4b1-2b8ec7062c23": {
-            id: "8c13ec93-0f19-448c-b4b1-2b8ec7062c23",
-            visible: true,
-            name: "TaskMembers",
-            desc: "This collections is going to help the task collection in order to know the members of for a task document",
-            estimatedSize: "",
-            cols: [
               {
-                id: "278b3272-90d8-49fc-9fb2-d24f72c9944e",
-                name: "_id",
-                datatype: "ObjectId",
-                param: "",
-                pk: true,
-                nn: true,
-                list: false,
-                comment: "",
-                data: "",
-                options: "",
-                estimatedSize: "",
-                fk: true,
-              },
-              {
-                id: "2da5d849-5ca6-41c5-8856-62aaded0de5a",
-                name: "role",
-                datatype: "String",
-                param: "",
-                pk: false,
-                nn: false,
-                list: false,
-                comment: "",
-                data: "",
-                options: "",
-                estimatedSize: "",
-              },
-              {
-                id: "37ed7bc5-bc77-4f48-a0c6-8dc8fb86ef98",
-                name: "title",
-                datatype: "String",
-                param: "",
-                pk: false,
-                nn: false,
-                list: false,
-                comment: "",
-                data: "",
-                options: "",
-                estimatedSize: "",
-              },
-              {
-                id: "989a4a9f-a778-43a5-894e-ae423bf6e4ab",
-                name: "user",
-                datatype: "ddc8169b-05fb-4987-b92d-3a932924977c",
-                param: "",
-                pk: false,
-                nn: false,
-                list: false,
-                comment: "",
-                data: "",
-                options: "",
-                estimatedSize: "",
-              },
-            ],
-            relations: [
-              "93b1e9ef-6149-4371-b81c-a4a1540d5dea",
-              "826b248c-16c7-4305-afe4-b1fdf7405a67",
-            ],
-            lines: [],
-            keys: [
-              {
-                id: "63d31f01-e775-4ced-9223-fc323f8b4450",
-                name: "Primary",
-                isPk: true,
-                cols: [
-                  {
-                    id: "7afec993-277b-4047-8196-97e2dd8fd2dc",
-                    colid: "278b3272-90d8-49fc-9fb2-d24f72c9944e",
-                  },
-                ],
-              },
-              {
-                id: "b18d2c63-86d2-4bbf-ad15-58e31a3301e4",
+                id: "cc66fc1f-ad35-4b30-9f2e-816f2b522de0",
                 isPk: false,
-                name: "TaskMembers_ai_1",
+                name: "Tasks_ai_4",
                 cols: [
                   {
-                    id: "d0a2abcf-910d-4776-b2da-c310860fb061",
-                    colid: "989a4a9f-a778-43a5-894e-ae423bf6e4ab",
+                    id: "25e9cf3a-07c9-4d3a-a24d-fd5d3dfa46db",
+                    colid: "415c192a-a48a-4247-a3ad-290b7f8e1477",
                   },
                 ],
               },
@@ -1058,6 +991,19 @@
                 options: "",
                 estimatedSize: "",
               },
+              {
+                id: "47116bf6-a539-411a-8619-413afbef84ba",
+                name: "seen",
+                datatype: "Boolean",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
             ],
             relations: ["5a80b967-d12f-4f8c-a654-d8b99a57ff43"],
             lines: [],
@@ -1081,6 +1027,104 @@
                   {
                     id: "ed6dda39-50a8-48ad-b5e7-cda64bbcb833",
                     colid: "0a22ecb5-c370-47b8-927f-b65a5301d156",
+                  },
+                ],
+              },
+            ],
+            indexes: [],
+            embeddable: false,
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            beforeScript: "",
+            afterScript: "",
+            others: "",
+          },
+          "1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54": {
+            id: "1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54",
+            visible: true,
+            name: "Member",
+            desc: "Project Member Collection",
+            estimatedSize: "",
+            cols: [
+              {
+                id: "00b6e7a3-902e-44ee-8532-c588960c90b7",
+                name: "_id",
+                datatype: "ObjectId",
+                param: "",
+                pk: true,
+                nn: true,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "6ea1730e-0771-4e93-b7dc-8e3cc5704c01",
+                name: "title",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "4111ca3e-661a-49ab-bdf4-0eceba7974f0",
+                name: "role",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "3241a597-5531-4078-a93a-70592fe4ca1b",
+                name: "email",
+                datatype: "String",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+              },
+              {
+                id: "9de8ca23-0402-4f9c-a6e4-25fa015664ed",
+                name: "projectId",
+                datatype: "ObjectId",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment: "",
+                data: "",
+                options: "",
+                estimatedSize: "",
+                fk: true,
+              },
+            ],
+            relations: ["acf41798-bccf-4ea9-8f60-9da593439f46"],
+            lines: [],
+            keys: [
+              {
+                id: "ff421e2f-2da4-42a5-aef2-471dbe55e778",
+                name: "Primary",
+                isPk: true,
+                cols: [
+                  {
+                    id: "531e2f3f-feff-4cbf-a9c3-bc87808ad8d8",
+                    colid: "00b6e7a3-902e-44ee-8532-c588960c90b7",
                   },
                 ],
               },
@@ -1143,87 +1187,6 @@
                 id: "77d2d0ff-60d8-4e61-8b74-2fcb924f57ee",
                 parentcol: "8e6288c7-a33b-453b-a197-c2e28e1ad152",
                 childcol: "1de7b09e-ff24-4500-afdc-c262865d02df",
-              },
-            ],
-            generate: true,
-            generateCustomCode: true,
-            customCode: "",
-            relationColor: "transparent",
-          },
-          "5c287f2b-46c8-490b-85a8-b91fb14ba70c": {
-            id: "5c287f2b-46c8-490b-85a8-b91fb14ba70c",
-            visible: true,
-            name: "tasks__id",
-            desc: "tasks key under Projects collection holds the reference to Tasks ",
-            type: "identifying",
-            parent_key: "aaec00e8-17cb-4f3b-b617-391707d06720",
-            parent: "ddbfb893-9b15-42d5-914c-ca6c42c0db81",
-            child: "e2d77f8f-911e-4476-a51e-5c4f4315b25b",
-            c_mp: "true",
-            c_mch: "true",
-            c_p: "one",
-            c_ch: "many",
-            c_cp: "",
-            c_cch: "",
-            cols: [
-              {
-                id: "bf38b828-5dc8-4b6a-a93f-efc2d9005387",
-                parentcol: "d0a354a2-ba7c-4b38-be67-7f6d877cd856",
-                childcol: "c7d083ca-254e-4091-af65-b5bef660081c",
-              },
-            ],
-            generate: true,
-            generateCustomCode: true,
-            customCode: "",
-            relationColor: "transparent",
-          },
-          "93b1e9ef-6149-4371-b81c-a4a1540d5dea": {
-            id: "93b1e9ef-6149-4371-b81c-a4a1540d5dea",
-            visible: true,
-            name: "members__id",
-            desc: "members key in Tasks collections holds the array of reference to Taskmembers collection",
-            type: "identifying",
-            parent_key: "10e49659-7b07-46d6-bc3b-3ff5900ea713",
-            parent: "e2d77f8f-911e-4476-a51e-5c4f4315b25b",
-            child: "8c13ec93-0f19-448c-b4b1-2b8ec7062c23",
-            c_mp: "true",
-            c_mch: "true",
-            c_p: "one",
-            c_ch: "many",
-            c_cp: "",
-            c_cch: "",
-            cols: [
-              {
-                id: "4140c63c-661f-4fd5-90c5-943bb11ab223",
-                parentcol: "06f52f2c-bd1d-4428-bdf0-635766ce0aae",
-                childcol: "278b3272-90d8-49fc-9fb2-d24f72c9944e",
-              },
-            ],
-            generate: true,
-            generateCustomCode: true,
-            customCode: "",
-            relationColor: "transparent",
-          },
-          "826b248c-16c7-4305-afe4-b1fdf7405a67": {
-            id: "826b248c-16c7-4305-afe4-b1fdf7405a67",
-            visible: true,
-            name: "user_id",
-            desc: "user key in Taskmembers collection is holding the reference to Users",
-            type: "identifying",
-            parent_key: "b18d2c63-86d2-4bbf-ad15-58e31a3301e4",
-            parent: "8c13ec93-0f19-448c-b4b1-2b8ec7062c23",
-            child: "ddc8169b-05fb-4987-b92d-3a932924977c",
-            c_mp: "true",
-            c_mch: "true",
-            c_p: "one",
-            c_ch: "one",
-            c_cp: "",
-            c_cch: "",
-            cols: [
-              {
-                id: "a10ee66e-3d25-4005-a073-20eac7659ae4",
-                parentcol: "989a4a9f-a778-43a5-894e-ae423bf6e4ab",
-                childcol: "574f5744-36c3-4cb3-9d97-1a9e02fb6431",
               },
             ],
             generate: true,
@@ -1366,10 +1329,73 @@
             customCode: "",
             relationColor: "transparent",
           },
+          "36437680-47ce-4cb7-854f-590b5e9a3ae1": {
+            id: "36437680-47ce-4cb7-854f-590b5e9a3ae1",
+            visible: true,
+            name: "projectId__id",
+            desc: "projectId key in Tasks collection holds the ID of project, we can do virtual populate tasks in Projects document while querying",
+            type: "identifying",
+            parent_key: "cc66fc1f-ad35-4b30-9f2e-816f2b522de0",
+            parent: "e2d77f8f-911e-4476-a51e-5c4f4315b25b",
+            child: "ddbfb893-9b15-42d5-914c-ca6c42c0db81",
+            c_mp: "true",
+            c_mch: "true",
+            c_p: "one",
+            c_ch: "one",
+            c_cp: "",
+            c_cch: "",
+            cols: [
+              {
+                id: "579aca70-179b-4951-838a-34a9f5d51465",
+                parentcol: "415c192a-a48a-4247-a3ad-290b7f8e1477",
+                childcol: "1de7b09e-ff24-4500-afdc-c262865d02df",
+              },
+            ],
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            relationColor: "transparent",
+          },
+          "acf41798-bccf-4ea9-8f60-9da593439f46": {
+            id: "acf41798-bccf-4ea9-8f60-9da593439f46",
+            visible: true,
+            name: "members_projectId",
+            desc: "members key in Projects collections will be virtually populated with the members from Member collection",
+            type: "identifying",
+            parent_key: "cdffea48-3d33-44f6-aad9-39d36d5869bc",
+            parent: "ddbfb893-9b15-42d5-914c-ca6c42c0db81",
+            child: "1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54",
+            c_mp: "true",
+            c_mch: "true",
+            c_p: "one",
+            c_ch: "many",
+            c_cp: "",
+            c_cch: "",
+            cols: [
+              {
+                id: "8e21450f-39c9-44fe-ab71-5943e1149538",
+                parentcol: "7f13ddfb-2cf4-4cba-85b3-7d57c2087f77",
+                childcol: "9de8ca23-0402-4f9c-a6e4-25fa015664ed",
+              },
+            ],
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            relationColor: "transparent",
+          },
         },
         Lines: {},
         Other: {},
-        Notes: {},
+        Notes: {
+          "62c056cd-e64c-40b2-b3e8-e3d70c0102f8": {
+            id: "62c056cd-e64c-40b2-b3e8-e3d70c0102f8",
+            visible: true,
+            name: "Text1",
+            desc: '<h1 class=\\"ql-align-center\\"><strong>Project Managment Data Modelling<\\/strong><\\/h1><h1><br><\\/h1>',
+            lines: [],
+            type: "Note",
+          },
+        },
       };
 
       async function processAll() {
@@ -1684,17 +1710,17 @@
                 <div
                   id="mainHtmlCanvas"
                   class="im-full-width im-arrow"
-                  style="transform: scale(0.8)"
+                  style="transform: scale(0.7)"
                 >
                   <div
                     class="im-select-decorator"
                     id="selector"
                     style="
-                      width: 0px;
-                      height: 2px;
+                      width: 3px;
+                      height: 0px;
                       display: none;
-                      top: 266px;
-                      left: 575px;
+                      top: 237px;
+                      left: 346px;
                     "
                   ></div>
                   <div
@@ -1706,8 +1732,8 @@
                     id="ddc8169b-05fb-4987-b92d-3a932924977c"
                     style="
                       position: absolute;
-                      left: 45px;
-                      top: 83px;
+                      left: 107px;
+                      top: 150px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2016,6 +2042,8 @@
                               <div></div>
                             </div>
                           </div>
+
+                          <div></div>
                         </div>
                         <div class="im-bottom-box">
                           <div
@@ -2045,8 +2073,8 @@
                     id="ddbfb893-9b15-42d5-914c-ca6c42c0db81"
                     style="
                       position: absolute;
-                      left: 421px;
-                      top: 275px;
+                      left: 479px;
+                      top: 358px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2054,12 +2082,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: 280px; height: 190px">
+                    <div style="width: 275px; height: 172px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="contentddbfb893-9b15-42d5-914c-ca6c42c0db81"
                         data-object-id="ddbfb893-9b15-42d5-914c-ca6c42c0db81"
-                        style="width: 280px; height: 190px; display: flex"
+                        style="width: 275px; height: 172px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -2205,38 +2233,6 @@
                               <div></div>
                             </div>
                             <div
-                              id="3ac7dac8-3d35-478e-88e6-ada1eaa88642"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c"></div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>Users__id</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">ObjectId</div>
-                              <div class="dCol im-t-c im-mini">NN</div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                            <div
-                              id="e2238f9d-d855-4e3d-8a01-068c3d1cc503"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c"></div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>Users_projectsCreated</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">Array</div>
-                              <div class="dCol im-t-c im-mini"></div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                            <div
                               id="d8c12c21-a2f3-411e-a1b1-1a13c9647040"
                               class="dRow im-t-r im-t-r-MONGOOSE"
                             >
@@ -2248,6 +2244,28 @@
                                 ><span>&nbsp;&nbsp;</span>
                               </div>
                               <div class="dCol im-t-c im-mini">Boolean</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="7f13ddfb-2cf4-4cba-85b3-7d57c2087f77"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/ak.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-AI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>members</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Array</div>
                               <div class="dCol im-t-c im-mini"></div>
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
@@ -2282,8 +2300,8 @@
                     id="e2d77f8f-911e-4476-a51e-5c4f4315b25b"
                     style="
                       position: absolute;
-                      left: 819px;
-                      top: 202px;
+                      left: 881px;
+                      top: 269px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2461,6 +2479,44 @@
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
                             </div>
+                            <div
+                              id="415c192a-a48a-4247-a3ad-290b7f8e1477"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/ak.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-AI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>projectId</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini">NN</div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="4ddc579d-b5d1-4572-a8d0-73afa85e84fa"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>priorityLevel</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
                           </div>
                         </div>
                         <div class="im-bottom-box">
@@ -2478,166 +2534,11 @@
                     </div>
                   </div>
                   <div
-                    id="8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    style="
-                      position: absolute;
-                      left: 405px;
-                      top: 513px;
-                      touch-action: none;
-                      width: max-content;
-                      height: max-content;
-                      padding-bottom: 45px;
-                      padding-right: 45px;
-                    "
-                  >
-                    <div style="width: 246px; height: 100px">
-                      <div
-                        class="t tMoon im-z-index-8"
-                        id="content8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                        data-object-id="8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                        style="width: 246px; height: 100px; display: flex"
-                      >
-                        <div
-                          class="dGraphicsHeader dGraphicsHeaderMoon"
-                          style="background: rgb(3, 169, 244)"
-                        >
-                          <div class="dGraphicsLeftTop">
-                            <i
-                              class="im-icon-12 im-icon-Type"
-                              style="color: rgb(3, 169, 244)"
-                            ></i>
-                          </div>
-                          <div
-                            data-table-id="8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                            class="dTableName"
-                            style="color: rgb(255, 255, 255)"
-                          >
-                            TaskMembers
-                          </div>
-                          <div class="dGraphicsRightTop im-pointer">
-                            <i
-                              class="im-pointer im-icon-DotsHorizontal16 im-icon-12"
-                              style="color: rgb(255, 255, 255)"
-                            ></i>
-                          </div>
-                        </div>
-                        <div
-                          class="dCols"
-                          id="dc8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                        >
-                          <div class="im-table-columns-displayed">
-                            <div
-                              id="278b3272-90d8-49fc-9fb2-d24f72c9944e"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c">
-                                <img
-                                  src="./assets/linked.svg"
-                                  alt="Key"
-                                  class="im-icon-key im-mark-L"
-                                />
-                              </div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>_id</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">ObjectId</div>
-                              <div class="dCol im-t-c im-mini">NN</div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                            <div
-                              id="2da5d849-5ca6-41c5-8856-62aaded0de5a"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c"></div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>role</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">String</div>
-                              <div class="dCol im-t-c im-mini"></div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                            <div
-                              id="37ed7bc5-bc77-4f48-a0c6-8dc8fb86ef98"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c"></div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>title</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">String</div>
-                              <div class="dCol im-t-c im-mini"></div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                            <div
-                              id="989a4a9f-a778-43a5-894e-ae423bf6e4ab"
-                              class="dRow im-t-r im-t-r-MONGOOSE"
-                            >
-                              <div class="dCol im-t-c">
-                                <img
-                                  src="./assets/ak.svg"
-                                  alt="Key"
-                                  class="im-icon-key im-mark-AI"
-                                />
-                              </div>
-                              <div class="dCol im-t-c tree__mini__clickable">
-                                <span>user</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span class="im-col-list">&nbsp;</span
-                                ><span>&nbsp;&nbsp;</span>
-                              </div>
-                              <div class="dCol im-t-c im-mini">Users</div>
-                              <div class="dCol im-t-c im-mini"></div>
-                              <div class="dCol im-t-c im-mini"><div></div></div>
-                              <div></div>
-                            </div>
-                          </div>
-
-                          <div></div>
-                        </div>
-                        <div class="im-bottom-box">
-                          <div
-                            class="im-table-descriptions-hidden"
-                            id="dcdcontent8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                          >
-                            <div style="color: rgb(238, 238, 238)">
-                              This collections is going to help the task
-                              collection in order to know the members of for a
-                              task document
-                            </div>
-                          </div>
-                        </div>
-                        <i
-                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
-                          style="
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            right: 0px;
-                            bottom: 0px;
-                            cursor: se-resize;
-                          "
-                        ></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
                     id="6d239867-e41e-4079-98d7-b21709826c89"
                     style="
                       position: absolute;
-                      left: 845px;
-                      top: 423px;
+                      left: 907px;
+                      top: 490px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2771,8 +2672,8 @@
                     id="6e0d6d33-58b9-42b1-a6d0-f14fa961afd0"
                     style="
                       position: absolute;
-                      left: 726px;
-                      top: 53px;
+                      left: 884px;
+                      top: 130px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -2939,8 +2840,8 @@
                     id="c6ba4f09-d78b-48c3-b31a-cf8af82bcfb9"
                     style="
                       position: absolute;
-                      left: 45px;
-                      top: 413px;
+                      left: 107px;
+                      top: 480px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -3066,17 +2967,6 @@
                             </div>
                           </div>
                         </div>
-                        <i
-                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
-                          style="
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            right: 0px;
-                            bottom: 0px;
-                            cursor: se-resize;
-                          "
-                        ></i>
                       </div>
                     </div>
                   </div>
@@ -3084,8 +2974,8 @@
                     id="b137954d-ebfc-40ec-be07-9ad274a384d4"
                     style="
                       position: absolute;
-                      left: 444px;
-                      top: 91px;
+                      left: 506px;
+                      top: 158px;
                       touch-action: none;
                       width: max-content;
                       height: max-content;
@@ -3093,12 +2983,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: 229px; height: 108px">
+                    <div style="width: 229px; height: 118px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="contentb137954d-ebfc-40ec-be07-9ad274a384d4"
                         data-object-id="b137954d-ebfc-40ec-be07-9ad274a384d4"
-                        style="width: 229px; height: 108px; display: flex"
+                        style="width: 229px; height: 118px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -3205,6 +3095,22 @@
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
                             </div>
+                            <div
+                              id="47116bf6-a539-411a-8619-413afbef84ba"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>seen</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Boolean</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
                           </div>
                         </div>
                         <div class="im-bottom-box">
@@ -3215,6 +3121,166 @@
                             <div style="color: rgb(238, 238, 238)">
                               Collections for storing all the notifications for
                               certain user
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                    style="
+                      position: absolute;
+                      left: 517px;
+                      top: 585px;
+                      touch-action: none;
+                      width: max-content;
+                      height: max-content;
+                      padding-bottom: 45px;
+                      padding-right: 45px;
+                    "
+                  >
+                    <div style="width: max-content; height: max-content">
+                      <div
+                        class="t tMoon im-z-index-8"
+                        id="content1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                        data-object-id="1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                        style="
+                          width: max-content;
+                          height: max-content;
+                          display: flex;
+                        "
+                      >
+                        <div
+                          class="dGraphicsHeader dGraphicsHeaderMoon"
+                          style="background: rgb(3, 169, 244)"
+                        >
+                          <div class="dGraphicsLeftTop">
+                            <i
+                              class="im-icon-12 im-icon-Type"
+                              style="color: rgb(3, 169, 244)"
+                            ></i>
+                          </div>
+                          <div
+                            data-table-id="1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                            class="dTableName"
+                            style="color: rgb(255, 255, 255)"
+                          >
+                            Member
+                          </div>
+                          <div class="dGraphicsRightTop im-pointer">
+                            <i
+                              class="im-pointer im-icon-DotsHorizontal16 im-icon-12"
+                              style="color: rgb(255, 255, 255)"
+                            ></i>
+                          </div>
+                        </div>
+                        <div
+                          class="dCols"
+                          id="dc1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                        >
+                          <div class="im-table-columns-displayed">
+                            <div
+                              id="00b6e7a3-902e-44ee-8532-c588960c90b7"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/pk.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-PI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>_id</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini">NN</div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="6ea1730e-0771-4e93-b7dc-8e3cc5704c01"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>title</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="4111ca3e-661a-49ab-bdf4-0eceba7974f0"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>role</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="3241a597-5531-4078-a93a-70592fe4ca1b"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>email</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="9de8ca23-0402-4f9c-a6e4-25fa015664ed"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/linked.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-L"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>projectId</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="im-bottom-box">
+                          <div
+                            class="im-table-descriptions-hidden"
+                            id="dcdcontent1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                          >
+                            <div style="color: rgb(238, 238, 238)">
+                              Project Member Collection
                             </div>
                           </div>
                         </div>
@@ -3232,7 +3298,58 @@
                       </div>
                     </div>
                   </div>
-                  <svg id="svgMain" style="width: 1110px; height: 831px">
+                  <div
+                    id="62c056cd-e64c-40b2-b3e8-e3d70c0102f8"
+                    style="
+                      position: absolute;
+                      left: 415px;
+                      top: 30px;
+                      touch-action: none;
+                      width: max-content;
+                      height: max-content;
+                      padding-bottom: 45px;
+                      padding-right: 45px;
+                    "
+                  >
+                    <div style="width: max-content; height: max-content">
+                      <div
+                        class="im-n im-z-index-8"
+                        id="content62c056cd-e64c-40b2-b3e8-e3d70c0102f8"
+                        data-object-id="62c056cd-e64c-40b2-b3e8-e3d70c0102f8"
+                        style="
+                          width: max-content;
+                          height: max-content;
+                          display: flex;
+                        "
+                      >
+                        <div
+                          class="im-n-text ql-editor im-n-text-nowrap"
+                          id="dc62c056cd-e64c-40b2-b3e8-e3d70c0102f8"
+                          style="
+                            color: rgb(255, 255, 255);
+                            background: transparent;
+                          "
+                        >
+                          <h1 class="ql-align-center">
+                            <strong>Project Managment Data Modelling</strong>
+                          </h1>
+                          <h1><br /></h1>
+                        </div>
+                        <i
+                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
+                          style="
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: se-resize;
+                          "
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <svg id="svgMain" style="width: 1269px; height: 950px">
                     <defs>
                       <marker
                         id="none999999"
@@ -4423,14 +4540,14 @@
                           <path
                             id="rb4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             class="relation-diagram-bg"
-                            d="M421 311L403 311L403 311Q388 311 376 278Q364 245 348 245L348 245L330 245"
+                            d="M479 394L461 394L461 394Q447 394 436 353Q425 312 410 312L410 312L392 312"
                           ></path>
                           <path
                             id="r4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M330,245 l 18,0 l0,0  Q364,245 376,278  T403,311  l0,0  L421,311"
+                            d="M392,312 l 18,0 l0,0  Q425,312 436,353  T461,394  l0,0  L479,394"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt4dbdba9b-69d5-4007-97b6-69c56a57e099">
@@ -4506,14 +4623,14 @@
                           <path
                             id="rbaf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             class="relation-diagram-bg"
-                            d="M421 311L403 311L403 311Q388 311 376 323Q364 335 348 335L348 335L330 335"
+                            d="M479 394L461 394L461 394Q447 394 436 398Q425 402 410 402L410 402L392 402"
                           ></path>
                           <path
                             id="raf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M330,335 l 18,0 l0,0  Q364,335 376,323  T403,311  l0,0  L421,311"
+                            d="M392,402 l 18,0 l0,0  Q425,402 436,398  T461,394  l0,0  L479,394"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rtaf587830-5b1b-4617-845f-98fa6f5d9bcb">
@@ -4587,265 +4704,16 @@
                       <g>
                         <g>
                           <path
-                            id="rb5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                            class="relation-diagram-bg"
-                            d="M819 238L801 238L801 238Q776 239 760 311Q744 383 719 383L719 383L701 383"
-                          ></path>
-                          <path
-                            id="r5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
-                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
-                            class="im-rel-path forcedLineColor"
-                            d="M701,383 l 18,0 l0,0  Q744,383 760,311  T801,238  l0,0  L819,238"
-                            style="stroke: rgb(238, 238, 238)"
-                          ></path>
-                          <text id="rt5c287f2b-46c8-490b-85a8-b91fb14ba70c">
-                            <textPath
-                              xlink:href="#r5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                              startOffset="50%"
-                            >
-                              <tspan
-                                dy="7"
-                                dx="-8"
-                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
-                                style="fill: rgb(51, 51, 51)"
-                              >
-                                
-                              </tspan>
-                              <tspan
-                                id="mid-5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                                dy="0"
-                                dx="-16"
-                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
-                                style="fill: rgb(238, 238, 238)"
-                              >
-                                
-                              </tspan>
-                            </textPath>
-                          </text>
-                          <text id="rb_cp5c287f2b-46c8-490b-85a8-b91fb14ba70c">
-                            <textPath
-                              xlink:href="#r5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                              startOffset="0%"
-                            >
-                              <tspan
-                                startOffset="100%"
-                                class="rCardinality"
-                                x="40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                          <text id="rb_cch5c287f2b-46c8-490b-85a8-b91fb14ba70c">
-                            <textPath
-                              xlink:href="#r5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                              text-anchor="end"
-                              startOffset="100%"
-                            >
-                              <tspan
-                                startOffset="0%"
-                                class="rCardinality"
-                                x="-40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                          <text id="rtb_cp5c287f2b-46c8-490b-85a8-b91fb14ba70c">
-                            <textPath
-                              xlink:href="#rb5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                              startOffset="0%"
-                            ></textPath>
-                          </text>
-                          <text
-                            id="rtb_cch5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                          >
-                            <textPath
-                              xlink:href="#rb5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                              text-anchor="end"
-                              startOffset="100%"
-                            ></textPath>
-                          </text>
-                        </g>
-                      </g>
-                      <g>
-                        <g>
-                          <path
-                            id="rb93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                            class="relation-diagram-bg"
-                            d="M651 549L669 549L669 549Q707 550 735 430Q763 310 801 310L801 310L819 310"
-                          ></path>
-                          <path
-                            id="r93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
-                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
-                            class="im-rel-path forcedLineColor"
-                            d="M819,310 l -18,0 l0,0  Q763,310 735,430  T669,549  l0,0  L651,549"
-                            style="stroke: rgb(238, 238, 238)"
-                          ></path>
-                          <text id="rt93b1e9ef-6149-4371-b81c-a4a1540d5dea">
-                            <textPath
-                              xlink:href="#r93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                              startOffset="50%"
-                            >
-                              <tspan
-                                dy="7"
-                                dx="-8"
-                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
-                                style="fill: rgb(51, 51, 51)"
-                              >
-                                
-                              </tspan>
-                              <tspan
-                                id="mid-93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                                dy="0"
-                                dx="-16"
-                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
-                                style="fill: rgb(238, 238, 238)"
-                              >
-                                
-                              </tspan>
-                            </textPath>
-                          </text>
-                          <text id="rb_cp93b1e9ef-6149-4371-b81c-a4a1540d5dea">
-                            <textPath
-                              xlink:href="#r93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                              startOffset="0%"
-                            ></textPath>
-                          </text>
-                          <text id="rb_cch93b1e9ef-6149-4371-b81c-a4a1540d5dea">
-                            <textPath
-                              xlink:href="#r93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                              text-anchor="end"
-                              startOffset="100%"
-                            ></textPath>
-                          </text>
-                          <text id="rtb_cp93b1e9ef-6149-4371-b81c-a4a1540d5dea">
-                            <textPath
-                              xlink:href="#rb93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                              startOffset="0%"
-                            >
-                              <tspan
-                                startOffset="100%"
-                                class="rCardinality"
-                                x="40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                          <text
-                            id="rtb_cch93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                          >
-                            <textPath
-                              xlink:href="#rb93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                              text-anchor="end"
-                              startOffset="100%"
-                            >
-                              <tspan
-                                startOffset="0%"
-                                class="rCardinality"
-                                x="-40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                        </g>
-                      </g>
-                      <g>
-                        <g>
-                          <path
-                            id="rb826b248c-16c7-4305-afe4-b1fdf7405a67"
-                            class="relation-diagram-bg"
-                            d="M330 119L348 119L348 119Q356 119 368 361Q380 603 387 603L387 603L405 603"
-                          ></path>
-                          <path
-                            id="r826b248c-16c7-4305-afe4-b1fdf7405a67"
-                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
-                            marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
-                            class="im-rel-path forcedLineColor"
-                            d="M405,603 l -18,0 l0,0  Q380,603 368,361  T348,119  l0,0  L330,119"
-                            style="stroke: rgb(238, 238, 238)"
-                          ></path>
-                          <text id="rt826b248c-16c7-4305-afe4-b1fdf7405a67">
-                            <textPath
-                              xlink:href="#r826b248c-16c7-4305-afe4-b1fdf7405a67"
-                              startOffset="50%"
-                            >
-                              <tspan
-                                dy="7"
-                                dx="-8"
-                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
-                                style="fill: rgb(51, 51, 51)"
-                              >
-                                
-                              </tspan>
-                              <tspan
-                                id="mid-826b248c-16c7-4305-afe4-b1fdf7405a67"
-                                dy="0"
-                                dx="-16"
-                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
-                                style="fill: rgb(238, 238, 238)"
-                              >
-                                
-                              </tspan>
-                            </textPath>
-                          </text>
-                          <text id="rb_cp826b248c-16c7-4305-afe4-b1fdf7405a67">
-                            <textPath
-                              xlink:href="#r826b248c-16c7-4305-afe4-b1fdf7405a67"
-                              startOffset="0%"
-                            ></textPath>
-                          </text>
-                          <text id="rb_cch826b248c-16c7-4305-afe4-b1fdf7405a67">
-                            <textPath
-                              xlink:href="#r826b248c-16c7-4305-afe4-b1fdf7405a67"
-                              text-anchor="end"
-                              startOffset="100%"
-                            ></textPath>
-                          </text>
-                          <text id="rtb_cp826b248c-16c7-4305-afe4-b1fdf7405a67">
-                            <textPath
-                              xlink:href="#rb826b248c-16c7-4305-afe4-b1fdf7405a67"
-                              startOffset="0%"
-                            >
-                              <tspan
-                                startOffset="100%"
-                                class="rCardinality"
-                                x="40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                          <text
-                            id="rtb_cch826b248c-16c7-4305-afe4-b1fdf7405a67"
-                          >
-                            <textPath
-                              xlink:href="#rb826b248c-16c7-4305-afe4-b1fdf7405a67"
-                              text-anchor="end"
-                              startOffset="100%"
-                            >
-                              <tspan
-                                startOffset="0%"
-                                class="rCardinality"
-                                x="-40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                        </g>
-                      </g>
-                      <g>
-                        <g>
-                          <path
                             id="rbe223ce06-5966-44e3-aae0-5668e06b68d7"
                             class="relation-diagram-bg"
-                            d="M845 459L827 459L827 459Q793 459 773 430Q753 401 719 401L719 401L701 401"
+                            d="M907 526L889 526L889 526Q853 526 831 505Q809 484 772 484L772 484L754 484"
                           ></path>
                           <path
                             id="re223ce06-5966-44e3-aae0-5668e06b68d7"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M701,401 l 18,0 l0,0  Q753,401 773,430  T827,459  l0,0  L845,459"
+                            d="M754,484 l 18,0 l0,0  Q809,484 831,505  T889,526  l0,0  L907,526"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rte223ce06-5966-44e3-aae0-5668e06b68d7">
@@ -4921,14 +4789,14 @@
                           <path
                             id="rba6a752bd-f3dd-489a-8ee5-eb472a13ed5e"
                             class="relation-diagram-bg"
-                            d="M1049 459L1067 459L1085 459L1085 328L1052 328L1034 328"
+                            d="M1111 526L1129 526L1147 526L1147 395L1116 395L1098 395"
                           ></path>
                           <path
                             id="ra6a752bd-f3dd-489a-8ee5-eb472a13ed5e"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M1034,328 l18,0 L1085,328 L1085,459 L1067,459 L1049,459"
+                            d="M1098,395 l18,0 L1147,395 L1147,526 L1129,526 L1111,526"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rta6a752bd-f3dd-489a-8ee5-eb472a13ed5e">
@@ -5004,14 +4872,14 @@
                           <path
                             id="rb12e65322-b515-476b-951d-1582a744550a"
                             class="relation-diagram-bg"
-                            d="M1038 238L1056 238L1074 238L1074 161L962 161L944 161"
+                            d="M881 305L863 305L845 305L845 238L866 238L884 238"
                           ></path>
                           <path
                             id="r12e65322-b515-476b-951d-1582a744550a"
                             marker-start="url(#cardinality-parent-mandatory-many-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M944,161 l18,0 L1074,161 L1074,238 L1056,238 L1038,238"
+                            d="M884,238 l-18,0 L845,238 L845,305 L863,305 L881,305"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt12e65322-b515-476b-951d-1582a744550a">
@@ -5042,6 +4910,19 @@
                             <textPath
                               xlink:href="#r12e65322-b515-476b-951d-1582a744550a"
                               startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text id="rb_cch12e65322-b515-476b-951d-1582a744550a">
+                            <textPath
+                              xlink:href="#r12e65322-b515-476b-951d-1582a744550a"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                          <text id="rtb_cp12e65322-b515-476b-951d-1582a744550a">
+                            <textPath
+                              xlink:href="#rb12e65322-b515-476b-951d-1582a744550a"
+                              startOffset="0%"
                             >
                               <tspan
                                 startOffset="100%"
@@ -5051,9 +4932,11 @@
                               ></tspan>
                             </textPath>
                           </text>
-                          <text id="rb_cch12e65322-b515-476b-951d-1582a744550a">
+                          <text
+                            id="rtb_cch12e65322-b515-476b-951d-1582a744550a"
+                          >
                             <textPath
-                              xlink:href="#r12e65322-b515-476b-951d-1582a744550a"
+                              xlink:href="#rb12e65322-b515-476b-951d-1582a744550a"
                               text-anchor="end"
                               startOffset="100%"
                             >
@@ -5065,21 +4948,6 @@
                               ></tspan>
                             </textPath>
                           </text>
-                          <text id="rtb_cp12e65322-b515-476b-951d-1582a744550a">
-                            <textPath
-                              xlink:href="#rb12e65322-b515-476b-951d-1582a744550a"
-                              startOffset="0%"
-                            ></textPath>
-                          </text>
-                          <text
-                            id="rtb_cch12e65322-b515-476b-951d-1582a744550a"
-                          >
-                            <textPath
-                              xlink:href="#rb12e65322-b515-476b-951d-1582a744550a"
-                              text-anchor="end"
-                              startOffset="100%"
-                            ></textPath>
-                          </text>
                         </g>
                       </g>
                       <g>
@@ -5087,14 +4955,14 @@
                           <path
                             id="rb51a1ae1a-1a63-4417-928d-18b65323f2d0"
                             class="relation-diagram-bg"
-                            d="M45 449L27 449L9 449L9 371L27 371L45 371"
+                            d="M107 516L89 516L71 516L71 438L89 438L107 438"
                           ></path>
                           <path
                             id="r51a1ae1a-1a63-4417-928d-18b65323f2d0"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M45,371 l-18,0 L9,371 L9,449 L27,449 L45,449"
+                            d="M107,438 l-18,0 L71,438 L71,516 L89,516 L107,516"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt51a1ae1a-1a63-4417-928d-18b65323f2d0">
@@ -5156,14 +5024,14 @@
                           <path
                             id="rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
                             class="relation-diagram-bg"
-                            d="M330 119L348 119L348 119Q368 119 387 150Q406 181 426 181L426 181L444 181"
+                            d="M392 186L410 186L410 186Q430 186 449 217Q468 248 488 248L488 248L506 248"
                           ></path>
                           <path
                             id="r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
                             marker-start="url(#cardinality-parent-mandatory-many-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M444,181 l -18,0 l0,0  Q406,181 387,150  T348,119  l0,0  L330,119"
+                            d="M506,248 l -18,0 l0,0  Q468,248 449,217  T410,186  l0,0  L392,186"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt5a80b967-d12f-4f8c-a654-d8b99a57ff43">
@@ -5234,6 +5102,172 @@
                           </text>
                         </g>
                       </g>
+                      <g>
+                        <g>
+                          <path
+                            id="rb36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                            class="relation-diagram-bg"
+                            d="M754 394L772 394L772 394Q797 395 818 413Q839 431 863 431L863 431L881 431"
+                          ></path>
+                          <path
+                            id="r36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
+                            class="im-rel-path forcedLineColor"
+                            d="M881,431 l -18,0 l0,0  Q839,431 818,413  T772,394  l0,0  L754,394"
+                            style="stroke: rgb(238, 238, 238)"
+                          ></path>
+                          <text id="rt36437680-47ce-4cb7-854f-590b5e9a3ae1">
+                            <textPath
+                              xlink:href="#r36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                              startOffset="50%"
+                            >
+                              <tspan
+                                dy="7"
+                                dx="-8"
+                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
+                                style="fill: rgb(51, 51, 51)"
+                              >
+                                
+                              </tspan>
+                              <tspan
+                                id="mid-36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                                dy="0"
+                                dx="-16"
+                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
+                                style="fill: rgb(238, 238, 238)"
+                              >
+                                
+                              </tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cp36437680-47ce-4cb7-854f-590b5e9a3ae1">
+                            <textPath
+                              xlink:href="#r36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text id="rb_cch36437680-47ce-4cb7-854f-590b5e9a3ae1">
+                            <textPath
+                              xlink:href="#r36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                          <text id="rtb_cp36437680-47ce-4cb7-854f-590b5e9a3ae1">
+                            <textPath
+                              xlink:href="#rb36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                              startOffset="0%"
+                            >
+                              <tspan
+                                startOffset="100%"
+                                class="rCardinality"
+                                x="40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text
+                            id="rtb_cch36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                          >
+                            <textPath
+                              xlink:href="#rb36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                              text-anchor="end"
+                              startOffset="100%"
+                            >
+                              <tspan
+                                startOffset="0%"
+                                class="rCardinality"
+                                x="-40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                        </g>
+                      </g>
+                      <g>
+                        <g>
+                          <path
+                            id="rbacf41798-bccf-4ea9-8f60-9da593439f46"
+                            class="relation-diagram-bg"
+                            d="M732 693L750 693L794 693L794 520L772 520L754 520"
+                          ></path>
+                          <path
+                            id="racf41798-bccf-4ea9-8f60-9da593439f46"
+                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
+                            class="im-rel-path forcedLineColor"
+                            d="M754,520 l18,0 L794,520 L794,693 L750,693 L732,693"
+                            style="stroke: rgb(238, 238, 238)"
+                          ></path>
+                          <text id="rtacf41798-bccf-4ea9-8f60-9da593439f46">
+                            <textPath
+                              xlink:href="#racf41798-bccf-4ea9-8f60-9da593439f46"
+                              startOffset="50%"
+                            >
+                              <tspan
+                                dy="7"
+                                dx="-8"
+                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
+                                style="fill: rgb(51, 51, 51)"
+                              >
+                                
+                              </tspan>
+                              <tspan
+                                id="mid-acf41798-bccf-4ea9-8f60-9da593439f46"
+                                dy="0"
+                                dx="-16"
+                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
+                                style="fill: rgb(238, 238, 238)"
+                              >
+                                
+                              </tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cpacf41798-bccf-4ea9-8f60-9da593439f46">
+                            <textPath
+                              xlink:href="#racf41798-bccf-4ea9-8f60-9da593439f46"
+                              startOffset="0%"
+                            >
+                              <tspan
+                                startOffset="100%"
+                                class="rCardinality"
+                                x="40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cchacf41798-bccf-4ea9-8f60-9da593439f46">
+                            <textPath
+                              xlink:href="#racf41798-bccf-4ea9-8f60-9da593439f46"
+                              text-anchor="end"
+                              startOffset="100%"
+                            >
+                              <tspan
+                                startOffset="0%"
+                                class="rCardinality"
+                                x="-40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text id="rtb_cpacf41798-bccf-4ea9-8f60-9da593439f46">
+                            <textPath
+                              xlink:href="#rbacf41798-bccf-4ea9-8f60-9da593439f46"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text
+                            id="rtb_cchacf41798-bccf-4ea9-8f60-9da593439f46"
+                          >
+                            <textPath
+                              xlink:href="#rbacf41798-bccf-4ea9-8f60-9da593439f46"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                        </g>
+                      </g>
                     </g>
                     <g></g>
                     <g></g>
@@ -5280,7 +5314,7 @@
               <div class="mm-subtitle">Report</div>
               <div class="mm-d-ver">
                 <div class="mm-d-c">Generated</div>
-                <div class="mm-d-v-l">7/3/2024 | 12:36:15 PM</div>
+                <div class="mm-d-v-l">7/6/2024 | 10:41:15 PM</div>
               </div>
             </div>
             <!--  wrapper end mm-subsection - end -->
@@ -5499,26 +5533,6 @@
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
                   <a
-                    href="index.html?page=References&item=itm-826b248c-16c7-4305-afe4-b1fdf7405a67"
-                    >user_id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
-                    >Users</a
-                  >
-                </div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
                     href="index.html?page=References&item=itm-51a1ae1a-1a63-4417-928d-18b65323f2d0"
                     >subscription__id</a
                   >
@@ -5626,22 +5640,15 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">Users__id</div>
-                <div class="mm-d-v">ObjectId</div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">Users_projectsCreated</div>
-                <div class="mm-d-v">Array</div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">trashed</div>
                 <div class="mm-d-v">Boolean</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">members</div>
+                <div class="mm-d-v">Array</div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
@@ -5664,6 +5671,12 @@
               <div class="mm-d-hor">
                 <div class="mm-d-c">Property in Projects_ai_2</div>
                 <div class="mm-d-v">attachments</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+              <div class="mm-d-v mm-d-v-s">Projects_ai_3</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Projects_ai_3</div>
+                <div class="mm-d-v">members</div>
               </div>
               <!--  wrapper end mm-d-hor - end -->
             </div>
@@ -5718,26 +5731,6 @@
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
                   <a
-                    href="index.html?page=References&item=itm-5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                    >tasks__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
-                    >Projects</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
-                    >Tasks</a
-                  >
-                </div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
                     href="index.html?page=References&item=itm-e223ce06-5966-44e3-aae0-5668e06b68d7"
                     >attachments__id</a
                   >
@@ -5752,6 +5745,46 @@
                   <a
                     href="index.html?page=Schemas&item=itm-6d239867-e41e-4079-98d7-b21709826c89"
                     >Attachments</a
+                  >
+                </div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                    >projectId__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
+                    >Tasks</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
+                  >
+                </div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-acf41798-bccf-4ea9-8f60-9da593439f46"
+                    >members_projectId</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                    >Member</a
                   >
                 </div>
               </div>
@@ -5833,6 +5866,20 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">projectId</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">priorityLevel</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -5860,6 +5907,12 @@
               <div class="mm-d-v mm-d-v-s">Tasks_ai_3</div>
               <div class="mm-d-hor"></div>
               <!--  wrapper end mm-d-hor - end -->
+              <div class="mm-d-v mm-d-v-s">Tasks_ai_4</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Tasks_ai_4</div>
+                <div class="mm-d-v">projectId</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
             </div>
             <!--  wrapper end mm-subsection - end -->
             <div class="mm-subsection">
@@ -5868,46 +5921,6 @@
                 <div class="mm-d-c">Name</div>
                 <div class="mm-d-c">Source</div>
                 <div class="mm-d-c">Target</div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                    >tasks__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
-                    >Projects</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
-                    >Tasks</a
-                  >
-                </div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                    >members__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
-                    >Tasks</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
                 <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
@@ -5948,101 +5961,12 @@
                     >Tasks</a
                   >
                 </div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-          </div>
-          <div
-            id="detail-itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-            class="mm-detail"
-          >
-            <div class="mm-d-i">
-              <div class="mm-d-c-i">Name</div>
-              <div class="mm-d-v-i">TaskMembers</div>
-            </div>
-            <div class="mm-d-ver mm-d-i">
-              <div class="mm-d-c-l">
-                <div class="mm-description">Description</div>
-              </div>
-              <div class="mm-d-v-l">
-                This collections is going to help the task collection in order
-                to know the members of for a task document
-              </div>
-            </div>
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Properties</div>
-              <div class="mm-d-g-5">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Data type</div>
-                <div class="mm-d-c">Param</div>
-                <div class="mm-d-c">Key</div>
-                <div class="mm-d-c">Not Null</div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">_id</div>
-                <div class="mm-d-v">ObjectId</div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
-                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">role</div>
-                <div class="mm-d-v">String</div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">title</div>
-                <div class="mm-d-v">String</div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">user</div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
-                    >Users</a
-                  >
-                </div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-                <div class="mm-d-v"></div>
-              </div>
-              <!--  wrapper end mm-d-g-5 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Keys</div>
-              <div class="mm-d-v mm-d-v-s">Primary</div>
-              <div class="mm-d-hor">
-                <div class="mm-d-c">Property in Primary</div>
-                <div class="mm-d-v">_id</div>
-              </div>
-              <!--  wrapper end mm-d-hor - end -->
-              <div class="mm-d-v mm-d-v-s">TaskMembers_ai_1</div>
-              <div class="mm-d-hor">
-                <div class="mm-d-c">Property in TaskMembers_ai_1</div>
-                <div class="mm-d-v">user</div>
-              </div>
-              <!--  wrapper end mm-d-hor - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">References</div>
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Source</div>
-                <div class="mm-d-c">Target</div>
                 <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
                   <a
-                    href="index.html?page=References&item=itm-93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                    >members__id</a
+                    href="index.html?page=References&item=itm-36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                    >projectId__id</a
                   >
                 </div>
                 <div class="mm-d-v">
@@ -6053,28 +5977,8 @@
                 </div>
                 <div class="mm-d-v">
                   <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-826b248c-16c7-4305-afe4-b1fdf7405a67"
-                    >user_id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
-                    >Users</a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
                   >
                 </div>
               </div>
@@ -6457,6 +6361,13 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">seen</div>
+                <div class="mm-d-v">Boolean</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -6501,6 +6412,108 @@
                   <a
                     href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
                     >Users</a
+                  >
+                </div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+          <div
+            id="detail-itm-1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">Member</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">Project Member Collection</div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Properties</div>
+              <div class="mm-d-g-5">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Data type</div>
+                <div class="mm-d-c">Param</div>
+                <div class="mm-d-c">Key</div>
+                <div class="mm-d-c">Not Null</div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">_id</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">title</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">role</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">email</div>
+                <div class="mm-d-v">String</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">projectId</div>
+                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+              </div>
+              <!--  wrapper end mm-d-g-5 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Keys</div>
+              <div class="mm-d-v mm-d-v-s">Primary</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Primary</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">References</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-acf41798-bccf-4ea9-8f60-9da593439f46"
+                    >members_projectId</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                    >Member</a
                   >
                 </div>
               </div>
@@ -6640,203 +6653,6 @@
                 <div class="mm-d-c">Property in Projects</div>
                 <div class="mm-d-v mm-d-v-s">Users_ai_2</div>
                 <div class="mm-d-v">projectIdAssigned</div>
-                <div class="mm-d-v">_id</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-          </div>
-          <div
-            id="detail-itm-5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-            class="mm-detail"
-          >
-            <div class="mm-d-i">
-              <div class="mm-d-c-i">Name</div>
-              <div class="mm-d-v-i">tasks__id</div>
-            </div>
-            <div class="mm-d-ver mm-d-i">
-              <div class="mm-d-c-l">
-                <div class="mm-description">Description</div>
-              </div>
-              <div class="mm-d-v-l">
-                tasks key under Projects collection holds the reference to Tasks
-              </div>
-            </div>
-            <div class="mm-subsection">
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Source</div>
-                <div class="mm-d-c">Target</div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-5c287f2b-46c8-490b-85a8-b91fb14ba70c"
-                    >tasks__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
-                    >Projects</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
-                    >Tasks</a
-                  >
-                </div>
-                <div class="mm-d-c">Cardinality type:</div>
-                <div class="mm-d-v">One to</div>
-                <div class="mm-d-v">many</div>
-                <div class="mm-d-c">Ordinality:</div>
-                <div class="mm-d-v">Mandatory</div>
-                <div class="mm-d-v">Mandatory</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Key and properties</div>
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Key name</div>
-                <div class="mm-d-c">Property in Projects</div>
-                <div class="mm-d-c">Property in Tasks</div>
-                <div class="mm-d-v mm-d-v-s">Projects_ai_1</div>
-                <div class="mm-d-v">tasks</div>
-                <div class="mm-d-v">_id</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-          </div>
-          <div
-            id="detail-itm-93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-            class="mm-detail"
-          >
-            <div class="mm-d-i">
-              <div class="mm-d-c-i">Name</div>
-              <div class="mm-d-v-i">members__id</div>
-            </div>
-            <div class="mm-d-ver mm-d-i">
-              <div class="mm-d-c-l">
-                <div class="mm-description">Description</div>
-              </div>
-              <div class="mm-d-v-l">
-                members key in Tasks collections holds the array of reference to
-                Taskmembers collection
-              </div>
-            </div>
-            <div class="mm-subsection">
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Source</div>
-                <div class="mm-d-c">Target</div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-93b1e9ef-6149-4371-b81c-a4a1540d5dea"
-                    >members__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
-                    >Tasks</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
-                <div class="mm-d-c">Cardinality type:</div>
-                <div class="mm-d-v">One to</div>
-                <div class="mm-d-v">many</div>
-                <div class="mm-d-c">Ordinality:</div>
-                <div class="mm-d-v">Mandatory</div>
-                <div class="mm-d-v">Mandatory</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Key and properties</div>
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Key name</div>
-                <div class="mm-d-c">Property in Tasks</div>
-                <div class="mm-d-c">Property in TaskMembers</div>
-                <div class="mm-d-v mm-d-v-s">Tasks_ai_1</div>
-                <div class="mm-d-v">members</div>
-                <div class="mm-d-v">_id</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-          </div>
-          <div
-            id="detail-itm-826b248c-16c7-4305-afe4-b1fdf7405a67"
-            class="mm-detail"
-          >
-            <div class="mm-d-i">
-              <div class="mm-d-c-i">Name</div>
-              <div class="mm-d-v-i">user_id</div>
-            </div>
-            <div class="mm-d-ver mm-d-i">
-              <div class="mm-d-c-l">
-                <div class="mm-description">Description</div>
-              </div>
-              <div class="mm-d-v-l">
-                user key in Taskmembers collection is holding the reference to
-                Users
-              </div>
-            </div>
-            <div class="mm-subsection">
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Source</div>
-                <div class="mm-d-c">Target</div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-826b248c-16c7-4305-afe4-b1fdf7405a67"
-                    >user_id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-8c13ec93-0f19-448c-b4b1-2b8ec7062c23"
-                    >TaskMembers</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
-                    >Users</a
-                  >
-                </div>
-                <div class="mm-d-c">Cardinality type:</div>
-                <div class="mm-d-v">One to</div>
-                <div class="mm-d-v">one</div>
-                <div class="mm-d-c">Ordinality:</div>
-                <div class="mm-d-v">Mandatory</div>
-                <div class="mm-d-v">Mandatory</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Key and properties</div>
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Key name</div>
-                <div class="mm-d-c">Property in TaskMembers</div>
-                <div class="mm-d-c">Property in Users</div>
-                <div class="mm-d-v mm-d-v-s">TaskMembers_ai_1</div>
-                <div class="mm-d-v">user</div>
                 <div class="mm-d-v">_id</div>
               </div>
               <!--  wrapper end mm-d-g-3 - end -->
@@ -7166,13 +6982,166 @@
             </div>
             <!--  wrapper end mm-subsection - end -->
           </div>
+          <div
+            id="detail-itm-36437680-47ce-4cb7-854f-590b5e9a3ae1"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">projectId__id</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                projectId key in Tasks collection holds the ID of project, we
+                can do virtual populate tasks in Projects document while
+                querying
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-36437680-47ce-4cb7-854f-590b5e9a3ae1"
+                    >projectId__id</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-e2d77f8f-911e-4476-a51e-5c4f4315b25b"
+                    >Tasks</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
+                  >
+                </div>
+                <div class="mm-d-c">Cardinality type:</div>
+                <div class="mm-d-v">One to</div>
+                <div class="mm-d-v">one</div>
+                <div class="mm-d-c">Ordinality:</div>
+                <div class="mm-d-v">Mandatory</div>
+                <div class="mm-d-v">Mandatory</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Key and properties</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Key name</div>
+                <div class="mm-d-c">Property in Tasks</div>
+                <div class="mm-d-c">Property in Projects</div>
+                <div class="mm-d-v mm-d-v-s">Tasks_ai_4</div>
+                <div class="mm-d-v">projectId</div>
+                <div class="mm-d-v">_id</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+          <div
+            id="detail-itm-acf41798-bccf-4ea9-8f60-9da593439f46"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">members_projectId</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                members key in Projects collections will be virtually populated
+                with the members from Member collection
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-acf41798-bccf-4ea9-8f60-9da593439f46"
+                    >members_projectId</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddbfb893-9b15-42d5-914c-ca6c42c0db81"
+                    >Projects</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
+                    >Member</a
+                  >
+                </div>
+                <div class="mm-d-c">Cardinality type:</div>
+                <div class="mm-d-v">One to</div>
+                <div class="mm-d-v">many</div>
+                <div class="mm-d-c">Ordinality:</div>
+                <div class="mm-d-v">Mandatory</div>
+                <div class="mm-d-v">Mandatory</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Key and properties</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Key name</div>
+                <div class="mm-d-c">Property in Projects</div>
+                <div class="mm-d-c">Property in Member</div>
+                <div class="mm-d-v mm-d-v-s">Projects_ai_3</div>
+                <div class="mm-d-v">members</div>
+                <div class="mm-d-v">projectId</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
         </div>
         <!--  section References - end --><!-- section Lines - start -->
         <div class="mm-section" id="mm-section-Lines"></div>
         <!--  section Lines - end --><!-- section Other - start -->
         <div class="mm-section" id="mm-section-Other"></div>
         <!--  section Other - end --><!-- section Notes - start -->
-        <div class="mm-section" id="mm-section-Notes"></div>
+        <div class="mm-section" id="mm-section-Notes">
+          <div class="mm-section-group">Notes</div>
+          <div
+            id="detail-itm-62c056cd-e64c-40b2-b3e8-e3d70c0102f8"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">Text1</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">Note</div>
+              <div class="mm-d-v-l">
+                <h1 class="ql-align-center">
+                  <strong>Project Managment Data Modelling</strong>
+                </h1>
+                <h1><br /></h1>
+              </div>
+            </div>
+          </div>
+        </div>
         <!--  section Notes - end -->
       </div>
     </div>
