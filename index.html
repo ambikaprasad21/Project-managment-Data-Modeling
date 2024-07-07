@@ -30,7 +30,7 @@
             visible: true,
             name: "Users",
             desc: "Users collection ",
-            estimatedSize: "",
+            estimatedSize: "500kB",
             cols: [
               {
                 id: "574f5744-36c3-4cb3-9d97-1a9e02fb6431",
@@ -44,7 +44,7 @@
                 data: "",
                 options: "",
                 estimatedSize: "",
-                fk: true,
+                fk: false,
               },
               {
                 id: "1c18a8ff-c314-4fa4-92eb-0ca8d9c5d235",
@@ -112,6 +112,20 @@
                 estimatedSize: "",
               },
               {
+                id: "6a9acba4-8ba1-4a20-bccb-6f075c332e89",
+                name: "notifications",
+                datatype: "Array",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment:
+                  "notifications are virtually populated when querying Users. ",
+                data: 'notifications: { time: 12-01-2024, message: \\"message\\",  seen: false}',
+                options: "",
+                estimatedSize: "",
+              },
+              {
                 id: "68665011-87bb-4554-9a6e-3fb18ed320d2",
                 name: "role",
                 datatype: "String",
@@ -132,7 +146,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "Contains the objectId of Projects",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -197,7 +211,8 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment:
+                  "contains the Project id of that project in which he\\/she is a member of",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -223,7 +238,8 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment:
+                  "subscription holds the Id of Subscriptions Collection, when we query user we can also show users subscription details",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -233,7 +249,7 @@
               "4dbdba9b-69d5-4007-97b6-69c56a57e099",
               "af587830-5b1b-4617-845f-98fa6f5d9bcb",
               "51a1ae1a-1a63-4417-928d-18b65323f2d0",
-              "5a80b967-d12f-4f8c-a654-d8b99a57ff43",
+              "3a8f9d5b-5a92-4495-b570-6b10c2c52b23",
             ],
             lines: [],
             keys: [
@@ -241,12 +257,7 @@
                 id: "eae1e5db-cace-4dfd-918d-322640612eb9",
                 name: "Primary",
                 isPk: true,
-                cols: [
-                  {
-                    id: "abd3bcfc-e474-4a17-8eed-a92bc78f9dfa",
-                    colid: "574f5744-36c3-4cb3-9d97-1a9e02fb6431",
-                  },
-                ],
+                cols: [],
               },
               {
                 id: "f3d52347-d923-4a6c-bc69-8da5d1299342",
@@ -278,6 +289,17 @@
                   {
                     id: "998bdc77-b5e6-41d2-ad24-6c40a63d4992",
                     colid: "9d2a1fe8-a11e-453c-9982-e4d593ed24a0",
+                  },
+                ],
+              },
+              {
+                id: "8ddb664f-b155-4d82-adda-e03d372a6dfc",
+                isPk: false,
+                name: "Users_ai_4",
+                cols: [
+                  {
+                    id: "6af9a81a-f0b8-457f-a023-09902ab9bf65",
+                    colid: "6a9acba4-8ba1-4a20-bccb-6f075c332e89",
                   },
                 ],
               },
@@ -346,7 +368,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "Id of user who created this project",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -359,7 +381,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "virtually populated from Tasks collection",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -372,7 +394,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "contains the ID of attachments",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -385,7 +407,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "helps in trashing the project",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -398,8 +420,8 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
-                data: "",
+                comment: "virtually populated from Member collection",
+                data: "members: [{member1}, {member2}, {member3}]",
                 options: "",
                 estimatedSize: "",
               },
@@ -530,8 +552,9 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
-                data: "",
+                comment:
+                  "members Id is embedded, when queried then member details will be filled up",
+                data: "members : [{title: 'developer', role: 'Software engineer', email: 'demo@gmail.com', projectId: \\\"jaosdjpoja68\\\", userInfo: {}}]",
                 options: "",
                 estimatedSize: "",
               },
@@ -543,7 +566,8 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment:
+                  "Holds the reference to Attachments collection when Task is quried then populate the attachments",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -569,7 +593,7 @@
                 pk: false,
                 nn: true,
                 list: false,
-                comment: "",
+                comment: "holds The Id project",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -980,16 +1004,17 @@
               },
               {
                 id: "0a22ecb5-c370-47b8-927f-b65a5301d156",
-                name: "user",
-                datatype: "ObjectId",
+                name: "email",
+                datatype: "String",
                 param: "",
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "email of User to which this notification belongs",
                 data: "",
                 options: "",
                 estimatedSize: "",
+                fk: true,
               },
               {
                 id: "47116bf6-a539-411a-8619-413afbef84ba",
@@ -1005,7 +1030,7 @@
                 estimatedSize: "",
               },
             ],
-            relations: ["5a80b967-d12f-4f8c-a654-d8b99a57ff43"],
+            relations: ["3a8f9d5b-5a92-4495-b570-6b10c2c52b23"],
             lines: [],
             keys: [
               {
@@ -1094,7 +1119,7 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "user email",
                 data: "",
                 options: "",
                 estimatedSize: "",
@@ -1107,11 +1132,25 @@
                 pk: false,
                 nn: false,
                 list: false,
-                comment: "",
+                comment: "Id of project to which this member belongs",
                 data: "",
                 options: "",
                 estimatedSize: "",
                 fk: true,
+              },
+              {
+                id: "cf64a57f-dc7f-4502-bfbf-0377b14ade79",
+                name: "userInfo",
+                datatype: "5635c6e3-cf23-4d7b-a6d9-c90f48a553f9",
+                param: "",
+                pk: false,
+                nn: false,
+                list: false,
+                comment:
+                  "This is a virtually populated field from Users collection",
+                data: "{ firstName: demo, lastName: demo, photo: photo_url }",
+                options: "",
+                estimatedSize: "",
               },
             ],
             relations: ["acf41798-bccf-4ea9-8f60-9da593439f46"],
@@ -1302,33 +1341,6 @@
             customCode: "",
             relationColor: "transparent",
           },
-          "5a80b967-d12f-4f8c-a654-d8b99a57ff43": {
-            id: "5a80b967-d12f-4f8c-a654-d8b99a57ff43",
-            visible: true,
-            name: "user__id",
-            desc: "user key in Notifications collections holds the objectId of Users document. It we want to get all the notifications for the for a certain then we need to use virtual populate.",
-            type: "identifying",
-            parent_key: "7ffdc1a7-e6ce-444e-9d77-5c67dad20e61",
-            parent: "b137954d-ebfc-40ec-be07-9ad274a384d4",
-            child: "ddc8169b-05fb-4987-b92d-3a932924977c",
-            c_mp: "true",
-            c_mch: "true",
-            c_p: "many",
-            c_ch: "one",
-            c_cp: "",
-            c_cch: "",
-            cols: [
-              {
-                id: "26abc0e1-f879-4acd-be8f-a028d3880d8f",
-                parentcol: "0a22ecb5-c370-47b8-927f-b65a5301d156",
-                childcol: "574f5744-36c3-4cb3-9d97-1a9e02fb6431",
-              },
-            ],
-            generate: true,
-            generateCustomCode: true,
-            customCode: "",
-            relationColor: "transparent",
-          },
           "36437680-47ce-4cb7-854f-590b5e9a3ae1": {
             id: "36437680-47ce-4cb7-854f-590b5e9a3ae1",
             visible: true,
@@ -1383,6 +1395,33 @@
             customCode: "",
             relationColor: "transparent",
           },
+          "3a8f9d5b-5a92-4495-b570-6b10c2c52b23": {
+            id: "3a8f9d5b-5a92-4495-b570-6b10c2c52b23",
+            visible: true,
+            name: "notifications_email",
+            desc: "notifications array in Users are virtually populated with the Notifications document",
+            type: "identifying",
+            parent_key: "8ddb664f-b155-4d82-adda-e03d372a6dfc",
+            parent: "ddc8169b-05fb-4987-b92d-3a932924977c",
+            child: "b137954d-ebfc-40ec-be07-9ad274a384d4",
+            c_mp: "true",
+            c_mch: "true",
+            c_p: "one",
+            c_ch: "many",
+            c_cp: "",
+            c_cch: "",
+            cols: [
+              {
+                id: "ca3ce768-bc37-4a54-a887-f2a5f9ca606d",
+                parentcol: "6a9acba4-8ba1-4a20-bccb-6f075c332e89",
+                childcol: "0a22ecb5-c370-47b8-927f-b65a5301d156",
+              },
+            ],
+            generate: true,
+            generateCustomCode: true,
+            customCode: "",
+            relationColor: "transparent",
+          },
         },
         Lines: {},
         Other: {},
@@ -1392,6 +1431,14 @@
             visible: true,
             name: "Text1",
             desc: '<h1 class=\\"ql-align-center\\"><strong>Project Managment Data Modelling<\\/strong><\\/h1><h1><br><\\/h1>',
+            lines: [],
+            type: "Note",
+          },
+          "5127e764-9bc6-42d8-9e67-0eb6212f2cf0": {
+            id: "5127e764-9bc6-42d8-9e67-0eb6212f2cf0",
+            visible: true,
+            name: "note1",
+            desc: '<h3 class=\\"ql-align-center\\"><strong>*Beta version of project management mongoose data model<\\/strong><\\/h3>',
             lines: [],
             type: "Note",
           },
@@ -1716,11 +1763,11 @@
                     class="im-select-decorator"
                     id="selector"
                     style="
-                      width: 3px;
+                      width: 0px;
                       height: 0px;
                       display: none;
-                      top: 237px;
-                      left: 346px;
+                      top: 721px;
+                      left: 217px;
                     "
                   ></div>
                   <div
@@ -1741,12 +1788,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: 285px; height: 298px">
+                    <div style="width: 285px; height: 316px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="contentddc8169b-05fb-4987-b92d-3a932924977c"
                         data-object-id="ddc8169b-05fb-4987-b92d-3a932924977c"
-                        style="width: 285px; height: 298px; display: flex"
+                        style="width: 285px; height: 316px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -1783,9 +1830,9 @@
                             >
                               <div class="dCol im-t-c">
                                 <img
-                                  src="./assets/linked.svg"
+                                  src="./assets/pk.svg"
                                   alt="Key"
-                                  class="im-icon-key im-mark-L"
+                                  class="im-icon-key im-mark-PI"
                                 />
                               </div>
                               <div class="dCol im-t-c tree__mini__clickable">
@@ -1875,6 +1922,28 @@
                                 ><span>&nbsp;&nbsp;</span>
                               </div>
                               <div class="dCol im-t-c im-mini">String</div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini"><div></div></div>
+                              <div></div>
+                            </div>
+                            <div
+                              id="6a9acba4-8ba1-4a20-bccb-6f075c332e89"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c">
+                                <img
+                                  src="./assets/ak.svg"
+                                  alt="Key"
+                                  class="im-icon-key im-mark-AI"
+                                />
+                              </div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>notifications</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div class="dCol im-t-c im-mini">Array</div>
                               <div class="dCol im-t-c im-mini"></div>
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
@@ -2042,8 +2111,6 @@
                               <div></div>
                             </div>
                           </div>
-
-                          <div></div>
                         </div>
                         <div class="im-bottom-box">
                           <div
@@ -2518,6 +2585,7 @@
                               <div></div>
                             </div>
                           </div>
+                          <div></div>
                         </div>
                         <div class="im-bottom-box">
                           <div
@@ -2530,6 +2598,17 @@
                             </div>
                           </div>
                         </div>
+                        <i
+                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
+                          style="
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: se-resize;
+                          "
+                        ></i>
                       </div>
                     </div>
                   </div>
@@ -2822,17 +2901,6 @@
                             </div>
                           </div>
                         </div>
-                        <i
-                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
-                          style="
-                            width: 16px;
-                            height: 16px;
-                            position: absolute;
-                            right: 0px;
-                            bottom: 0px;
-                            cursor: se-resize;
-                          "
-                        ></i>
                       </div>
                     </div>
                   </div>
@@ -3079,18 +3147,18 @@
                             >
                               <div class="dCol im-t-c">
                                 <img
-                                  src="./assets/ak.svg"
+                                  src="./assets/linked.svg"
                                   alt="Key"
-                                  class="im-icon-key im-mark-AI"
+                                  class="im-icon-key im-mark-L"
                                 />
                               </div>
                               <div class="dCol im-t-c tree__mini__clickable">
-                                <span>user</span
+                                <span>email</span
                                 ><span class="im-col-list">&nbsp;</span
                                 ><span class="im-col-list">&nbsp;</span
                                 ><span>&nbsp;&nbsp;</span>
                               </div>
-                              <div class="dCol im-t-c im-mini">ObjectId</div>
+                              <div class="dCol im-t-c im-mini">String</div>
                               <div class="dCol im-t-c im-mini"></div>
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
@@ -3124,6 +3192,17 @@
                             </div>
                           </div>
                         </div>
+                        <i
+                          class="im-icon-ResizeBottomRight16 im-icon-16 res"
+                          style="
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            right: 0px;
+                            bottom: 0px;
+                            cursor: se-resize;
+                          "
+                        ></i>
                       </div>
                     </div>
                   </div>
@@ -3140,16 +3219,12 @@
                       padding-right: 45px;
                     "
                   >
-                    <div style="width: max-content; height: max-content">
+                    <div style="width: 236px; height: 136px">
                       <div
                         class="t tMoon im-z-index-8"
                         id="content1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
                         data-object-id="1a947f0e-ed6d-4cd7-9a6c-eb87167b9d54"
-                        style="
-                          width: max-content;
-                          height: max-content;
-                          display: flex;
-                        "
+                        style="width: 236px; height: 136px; display: flex"
                       >
                         <div
                           class="dGraphicsHeader dGraphicsHeaderMoon"
@@ -3272,6 +3347,77 @@
                               <div class="dCol im-t-c im-mini"><div></div></div>
                               <div></div>
                             </div>
+                            <div
+                              id="cf64a57f-dc7f-4502-bfbf-0377b14ade79"
+                              class="dRow im-t-r im-t-r-MONGOOSE"
+                            >
+                              <div class="dCol im-t-c"></div>
+                              <div class="dCol im-t-c tree__mini__clickable">
+                                <span>userInfo</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span class="im-col-object-left">{</span
+                                ><span class="im-col-object-right">}</span
+                                ><span class="im-col-list">&nbsp;</span
+                                ><span>&nbsp;&nbsp;</span>
+                              </div>
+                              <div
+                                class="dCol im-t-c im-mini im-col-object-name"
+                              >
+                                Object
+                              </div>
+                              <div class="dCol im-t-c im-mini"></div>
+                              <div class="dCol im-t-c im-mini">
+                                <div class="im-expander im-pointer">
+                                  <i
+                                    class="im-icon-14 im-icon-Visibility16 icon_im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9"
+                                  ></i>
+                                </div>
+                              </div>
+                              <div
+                                class="im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9 im-the-ghost im-display-inline-block"
+                                style="grid-column: span 4 / auto"
+                              >
+                                <div></div>
+                              </div>
+                              <div
+                                class="im-embedded im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9 im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9"
+                                style="
+                                  grid-column: span 4 / auto;
+                                  margin-left: 45px;
+                                "
+                              >
+                                <div
+                                  id="im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9"
+                                  class="im-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9 im-display-inline-block"
+                                >
+                                  <div
+                                    class="dNestedLink"
+                                    style="
+                                      border-color: rgb(238, 238, 238);
+                                      width: 45px;
+                                      left: -45px;
+                                    "
+                                  ></div>
+                                  <div
+                                    class="dGraphicsNestedHeader"
+                                    style="background: rgba(0, 0, 0, 0.3)"
+                                  >
+                                    <div class="dGraphicsLeftTop"></div>
+                                    <div
+                                      data-nested-id="cf64a57f-dc7f-4502-bfbf-0377b14ade79"
+                                      class="dTableName"
+                                      style="color: rgb(255, 255, 255)"
+                                    >
+                                      userInfo
+                                      <span class="im-col-object-left"
+                                        >{ }</span
+                                      >
+                                    </div>
+                                    <div class="dGraphicsRightTop"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div class="im-bottom-box">
@@ -3334,6 +3480,44 @@
                             <strong>Project Managment Data Modelling</strong>
                           </h1>
                           <h1><br /></h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="5127e764-9bc6-42d8-9e67-0eb6212f2cf0"
+                    style="
+                      position: absolute;
+                      left: 361px;
+                      top: 760px;
+                      touch-action: none;
+                      width: max-content;
+                      height: max-content;
+                      padding-bottom: 45px;
+                      padding-right: 45px;
+                    "
+                  >
+                    <div style="width: 535px; height: 34px">
+                      <div
+                        class="im-n im-z-index-8"
+                        id="content5127e764-9bc6-42d8-9e67-0eb6212f2cf0"
+                        data-object-id="5127e764-9bc6-42d8-9e67-0eb6212f2cf0"
+                        style="width: 535px; height: 34px; display: flex"
+                      >
+                        <div
+                          class="im-n-text ql-editor"
+                          id="dc5127e764-9bc6-42d8-9e67-0eb6212f2cf0"
+                          style="
+                            color: rgb(233, 30, 99);
+                            background: rgb(242, 242, 242);
+                          "
+                        >
+                          <h3 class="ql-align-center">
+                            <strong
+                              >*Beta version of project management mongoose data
+                              model</strong
+                            >
+                          </h3>
                         </div>
                         <i
                           class="im-icon-ResizeBottomRight16 im-icon-16 res"
@@ -4540,14 +4724,14 @@
                           <path
                             id="rb4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             class="relation-diagram-bg"
-                            d="M479 394L461 394L461 394Q447 394 436 353Q425 312 410 312L410 312L392 312"
+                            d="M479 394L461 394L461 394Q447 394 436 362Q425 330 410 330L410 330L392 330"
                           ></path>
                           <path
                             id="r4dbdba9b-69d5-4007-97b6-69c56a57e099"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M392,312 l 18,0 l0,0  Q425,312 436,353  T461,394  l0,0  L479,394"
+                            d="M392,330 l 18,0 l0,0  Q425,330 436,362  T461,394  l0,0  L479,394"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt4dbdba9b-69d5-4007-97b6-69c56a57e099">
@@ -4623,14 +4807,14 @@
                           <path
                             id="rbaf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             class="relation-diagram-bg"
-                            d="M479 394L461 394L461 394Q447 394 436 398Q425 402 410 402L410 402L392 402"
+                            d="M479 394L461 394L461 394Q447 394 436 407Q425 420 410 420L410 420L392 420"
                           ></path>
                           <path
                             id="raf587830-5b1b-4617-845f-98fa6f5d9bcb"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M392,402 l 18,0 l0,0  Q425,402 436,398  T461,394  l0,0  L479,394"
+                            d="M392,420 l 18,0 l0,0  Q425,420 436,407  T461,394  l0,0  L479,394"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rtaf587830-5b1b-4617-845f-98fa6f5d9bcb">
@@ -4955,14 +5139,14 @@
                           <path
                             id="rb51a1ae1a-1a63-4417-928d-18b65323f2d0"
                             class="relation-diagram-bg"
-                            d="M107 516L89 516L71 516L71 438L89 438L107 438"
+                            d="M107 516L89 516L71 516L71 456L89 456L107 456"
                           ></path>
                           <path
                             id="r51a1ae1a-1a63-4417-928d-18b65323f2d0"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M107,438 l-18,0 L71,438 L71,516 L89,516 L107,516"
+                            d="M107,456 l-18,0 L71,456 L71,516 L89,516 L107,516"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rt51a1ae1a-1a63-4417-928d-18b65323f2d0">
@@ -5016,89 +5200,6 @@
                               text-anchor="end"
                               startOffset="100%"
                             ></textPath>
-                          </text>
-                        </g>
-                      </g>
-                      <g>
-                        <g>
-                          <path
-                            id="rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                            class="relation-diagram-bg"
-                            d="M392 186L410 186L410 186Q430 186 449 217Q468 248 488 248L488 248L506 248"
-                          ></path>
-                          <path
-                            id="r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                            marker-start="url(#cardinality-parent-mandatory-many-eeeeee)"
-                            marker-end="url(#cardinality-child-mandatory-one-eeeeee)"
-                            class="im-rel-path forcedLineColor"
-                            d="M506,248 l -18,0 l0,0  Q468,248 449,217  T410,186  l0,0  L392,186"
-                            style="stroke: rgb(238, 238, 238)"
-                          ></path>
-                          <text id="rt5a80b967-d12f-4f8c-a654-d8b99a57ff43">
-                            <textPath
-                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                              startOffset="50%"
-                            >
-                              <tspan
-                                dy="7"
-                                dx="-8"
-                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
-                                style="fill: rgb(51, 51, 51)"
-                              >
-                                
-                              </tspan>
-                              <tspan
-                                id="mid-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                                dy="0"
-                                dx="-16"
-                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
-                                style="fill: rgb(238, 238, 238)"
-                              >
-                                
-                              </tspan>
-                            </textPath>
-                          </text>
-                          <text id="rb_cp5a80b967-d12f-4f8c-a654-d8b99a57ff43">
-                            <textPath
-                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                              startOffset="0%"
-                            ></textPath>
-                          </text>
-                          <text id="rb_cch5a80b967-d12f-4f8c-a654-d8b99a57ff43">
-                            <textPath
-                              xlink:href="#r5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                              text-anchor="end"
-                              startOffset="100%"
-                            ></textPath>
-                          </text>
-                          <text id="rtb_cp5a80b967-d12f-4f8c-a654-d8b99a57ff43">
-                            <textPath
-                              xlink:href="#rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                              startOffset="0%"
-                            >
-                              <tspan
-                                startOffset="100%"
-                                class="rCardinality"
-                                x="40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
-                          </text>
-                          <text
-                            id="rtb_cch5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                          >
-                            <textPath
-                              xlink:href="#rb5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                              text-anchor="end"
-                              startOffset="100%"
-                            >
-                              <tspan
-                                startOffset="0%"
-                                class="rCardinality"
-                                x="-40px"
-                                dy="-8px"
-                              ></tspan>
-                            </textPath>
                           </text>
                         </g>
                       </g>
@@ -5190,14 +5291,14 @@
                           <path
                             id="rbacf41798-bccf-4ea9-8f60-9da593439f46"
                             class="relation-diagram-bg"
-                            d="M732 693L750 693L794 693L794 520L772 520L754 520"
+                            d="M757 693L775 693L794 693L794 520L772 520L754 520"
                           ></path>
                           <path
                             id="racf41798-bccf-4ea9-8f60-9da593439f46"
                             marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
                             marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
                             class="im-rel-path forcedLineColor"
-                            d="M754,520 l18,0 L794,520 L794,693 L750,693 L732,693"
+                            d="M754,520 l18,0 L794,520 L794,693 L775,693 L757,693"
                             style="stroke: rgb(238, 238, 238)"
                           ></path>
                           <text id="rtacf41798-bccf-4ea9-8f60-9da593439f46">
@@ -5268,6 +5369,89 @@
                           </text>
                         </g>
                       </g>
+                      <g>
+                        <g>
+                          <path
+                            id="rb3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                            class="relation-diagram-bg"
+                            d="M506 248L488 248L488 248Q464 248 449 271Q434 294 410 294L410 294L392 294"
+                          ></path>
+                          <path
+                            id="r3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                            marker-start="url(#cardinality-parent-mandatory-one-eeeeee)"
+                            marker-end="url(#cardinality-child-mandatory-many-eeeeee)"
+                            class="im-rel-path forcedLineColor"
+                            d="M392,294 l 18,0 l0,0  Q434,294 449,271  T488,248  l0,0  L506,248"
+                            style="stroke: rgb(238, 238, 238)"
+                          ></path>
+                          <text id="rt3a8f9d5b-5a92-4495-b570-6b10c2c52b23">
+                            <textPath
+                              xlink:href="#r3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                              startOffset="50%"
+                            >
+                              <tspan
+                                dy="7"
+                                dx="-8"
+                                class="im-icon-FullCircle im-icon-16 forcedTransparentFill"
+                                style="fill: rgb(51, 51, 51)"
+                              >
+                                
+                              </tspan>
+                              <tspan
+                                id="mid-3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                                dy="0"
+                                dx="-16"
+                                class="im-icon-ExpandCircle16 im-icon-16 forcedLineColor forcedPolygonFill"
+                                style="fill: rgb(238, 238, 238)"
+                              >
+                                
+                              </tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cp3a8f9d5b-5a92-4495-b570-6b10c2c52b23">
+                            <textPath
+                              xlink:href="#r3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                              startOffset="0%"
+                            >
+                              <tspan
+                                startOffset="100%"
+                                class="rCardinality"
+                                x="40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text id="rb_cch3a8f9d5b-5a92-4495-b570-6b10c2c52b23">
+                            <textPath
+                              xlink:href="#r3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                              text-anchor="end"
+                              startOffset="100%"
+                            >
+                              <tspan
+                                startOffset="0%"
+                                class="rCardinality"
+                                x="-40px"
+                                dy="-8px"
+                              ></tspan>
+                            </textPath>
+                          </text>
+                          <text id="rtb_cp3a8f9d5b-5a92-4495-b570-6b10c2c52b23">
+                            <textPath
+                              xlink:href="#rb3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                              startOffset="0%"
+                            ></textPath>
+                          </text>
+                          <text
+                            id="rtb_cch3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                          >
+                            <textPath
+                              xlink:href="#rb3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                              text-anchor="end"
+                              startOffset="100%"
+                            ></textPath>
+                          </text>
+                        </g>
+                      </g>
                     </g>
                     <g></g>
                     <g></g>
@@ -5314,7 +5498,7 @@
               <div class="mm-subtitle">Report</div>
               <div class="mm-d-ver">
                 <div class="mm-d-c">Generated</div>
-                <div class="mm-d-v-l">7/6/2024 | 10:41:15 PM</div>
+                <div class="mm-d-v-l">7/7/2024 | 10:17:16 AM</div>
               </div>
             </div>
             <!--  wrapper end mm-subsection - end -->
@@ -5390,6 +5574,25 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">notifications</div>
+                <div class="mm-d-v">Array</div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      notifications are virtually populated when querying Users.
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">role</div>
                 <div class="mm-d-v">String</div>
                 <div class="mm-d-v"></div>
@@ -5402,6 +5605,16 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">Contains the objectId of Projects</div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">numberOfProjectsAllowed</div>
@@ -5437,6 +5650,19 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      contains the Project id of that project in which he/she is
+                      a member of
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">active</div>
@@ -5451,6 +5677,20 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      subscription holds the Id of Subscriptions Collection,
+                      when we query user we can also show users subscription
+                      details
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -5458,10 +5698,7 @@
             <div class="mm-subsection">
               <div class="mm-subtitle">Keys</div>
               <div class="mm-d-v mm-d-v-s">Primary</div>
-              <div class="mm-d-hor">
-                <div class="mm-d-c">Property in Primary</div>
-                <div class="mm-d-v">_id</div>
-              </div>
+              <div class="mm-d-hor"></div>
               <!--  wrapper end mm-d-hor - end -->
               <div class="mm-d-v mm-d-v-s">Users_ai_1</div>
               <div class="mm-d-hor">
@@ -5479,6 +5716,12 @@
               <div class="mm-d-hor">
                 <div class="mm-d-c">Property in Users_ai_3</div>
                 <div class="mm-d-v">subscription</div>
+              </div>
+              <!--  wrapper end mm-d-hor - end -->
+              <div class="mm-d-v mm-d-v-s">Users_ai_4</div>
+              <div class="mm-d-hor">
+                <div class="mm-d-c">Property in Users_ai_4</div>
+                <div class="mm-d-v">notifications</div>
               </div>
               <!--  wrapper end mm-d-hor - end -->
             </div>
@@ -5553,20 +5796,20 @@
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
                   <a
-                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                    >user__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
-                    >Notifications</a
+                    href="index.html?page=References&item=itm-3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                    >notifications_email</a
                   >
                 </div>
                 <div class="mm-d-v">
                   <a
                     href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
                     >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
                   >
                 </div>
               </div>
@@ -5624,6 +5867,18 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      Id of user who created this project
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">tasks</div>
@@ -5631,6 +5886,18 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      virtually populated from Tasks collection
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">attachments</div>
@@ -5638,6 +5905,16 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">contains the ID of attachments</div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">trashed</div>
@@ -5645,6 +5922,16 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">helps in trashing the project</div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">members</div>
@@ -5652,6 +5939,18 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      virtually populated from Member collection
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -5852,6 +6151,19 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      members Id is embedded, when queried then member details
+                      will be filled up
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">attachments</div>
@@ -5859,6 +6171,19 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      Holds the reference to Attachments collection when Task is
+                      quried then populate the attachments
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">deadline</div>
@@ -5873,6 +6198,16 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"><span class="mm-yes">Yes</span></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">holds The Id project</div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">priorityLevel</div>
@@ -6356,11 +6691,23 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
-                <div class="mm-d-v mm-d-v-s">user</div>
-                <div class="mm-d-v">ObjectId</div>
+                <div class="mm-d-v mm-d-v-s">email</div>
+                <div class="mm-d-v">String</div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      email of User to which this notification belongs
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">seen</div>
@@ -6383,7 +6730,7 @@
               <div class="mm-d-v mm-d-v-s">Notifications_ai_1</div>
               <div class="mm-d-hor">
                 <div class="mm-d-c">Property in Notifications_ai_1</div>
-                <div class="mm-d-v">user</div>
+                <div class="mm-d-v">email</div>
               </div>
               <!--  wrapper end mm-d-hor - end -->
             </div>
@@ -6398,20 +6745,20 @@
                 <!--  wrapper end mm-d-g-c-m-3 - end -->
                 <div class="mm-d-v mm-d-v-s">
                   <a
-                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                    >user__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
-                    >Notifications</a
+                    href="index.html?page=References&item=itm-3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                    >notifications_email</a
                   >
                 </div>
                 <div class="mm-d-v">
                   <a
                     href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
                     >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
                   >
                 </div>
               </div>
@@ -6469,6 +6816,16 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">user email</div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
                 <!--  wrapper end mm-d-g-c-m-5 - end -->
                 <div class="mm-d-v mm-d-v-s">projectId</div>
@@ -6476,6 +6833,42 @@
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
                 <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      Id of project to which this member belongs
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-g-c-m-5"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
+                <div class="mm-d-v mm-d-v-s">userInfo</div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Types&item=itm-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9"
+                    >Object</a
+                  >
+                </div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-v"></div>
+                <div class="mm-d-g-c-m-5">
+                  <div class="mm-d-hor mm-props">
+                    <div class="mm-d-c">
+                      <div class="mm-description">Description</div>
+                    </div>
+                    <div class="mm-d-v">
+                      This is a virtually populated field from Users collection
+                    </div>
+                  </div>
+                  <!--  wrapper end mm-d-hor mm-props - end -->
+                </div>
+                <!--  wrapper end mm-d-g-c-m-5 - end -->
               </div>
               <!--  wrapper end mm-d-g-5 - end -->
             </div>
@@ -6523,7 +6916,29 @@
           </div>
         </div>
         <!--  section Schemas - end --><!-- section Types - start -->
-        <div class="mm-section" id="mm-section-Types"></div>
+        <div class="mm-section" id="mm-section-Types">
+          <div class="mm-section-group">Types</div>
+          <div
+            id="detail-itm-5635c6e3-cf23-4d7b-a6d9-c90f48a553f9"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">Object</div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Properties</div>
+              <div class="mm-d-g-4">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Data type</div>
+                <div class="mm-d-c">Array</div>
+                <div class="mm-d-c">Not Null</div>
+              </div>
+              <!--  wrapper end mm-d-g-4 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
+        </div>
         <!--  section Types - end --><!-- section References - start -->
         <div class="mm-section" id="mm-section-References">
           <div class="mm-section-group">references</div>
@@ -6916,73 +7331,6 @@
             <!--  wrapper end mm-subsection - end -->
           </div>
           <div
-            id="detail-itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-            class="mm-detail"
-          >
-            <div class="mm-d-i">
-              <div class="mm-d-c-i">Name</div>
-              <div class="mm-d-v-i">user__id</div>
-            </div>
-            <div class="mm-d-ver mm-d-i">
-              <div class="mm-d-c-l">
-                <div class="mm-description">Description</div>
-              </div>
-              <div class="mm-d-v-l">
-                user key in Notifications collections holds the objectId of
-                Users document. It we want to get all the notifications for the
-                for a certain then we need to use virtual populate.
-              </div>
-            </div>
-            <div class="mm-subsection">
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Name</div>
-                <div class="mm-d-c">Source</div>
-                <div class="mm-d-c">Target</div>
-                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
-                <!--  wrapper end mm-d-g-c-m-3 - end -->
-                <div class="mm-d-v mm-d-v-s">
-                  <a
-                    href="index.html?page=References&item=itm-5a80b967-d12f-4f8c-a654-d8b99a57ff43"
-                    >user__id</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
-                    >Notifications</a
-                  >
-                </div>
-                <div class="mm-d-v">
-                  <a
-                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
-                    >Users</a
-                  >
-                </div>
-                <div class="mm-d-c">Cardinality type:</div>
-                <div class="mm-d-v">Many to</div>
-                <div class="mm-d-v">one</div>
-                <div class="mm-d-c">Ordinality:</div>
-                <div class="mm-d-v">Mandatory</div>
-                <div class="mm-d-v">Mandatory</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-            <div class="mm-subsection">
-              <div class="mm-subtitle">Key and properties</div>
-              <div class="mm-d-g-3">
-                <div class="mm-d-c">Key name</div>
-                <div class="mm-d-c">Property in Notifications</div>
-                <div class="mm-d-c">Property in Users</div>
-                <div class="mm-d-v mm-d-v-s">Notifications_ai_1</div>
-                <div class="mm-d-v">user</div>
-                <div class="mm-d-v">_id</div>
-              </div>
-              <!--  wrapper end mm-d-g-3 - end -->
-            </div>
-            <!--  wrapper end mm-subsection - end -->
-          </div>
-          <div
             id="detail-itm-36437680-47ce-4cb7-854f-590b5e9a3ae1"
             class="mm-detail"
           >
@@ -7115,6 +7463,72 @@
             </div>
             <!--  wrapper end mm-subsection - end -->
           </div>
+          <div
+            id="detail-itm-3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">notifications_email</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">
+                <div class="mm-description">Description</div>
+              </div>
+              <div class="mm-d-v-l">
+                notifications array in Users are virtually populated with the
+                Notifications document
+              </div>
+            </div>
+            <div class="mm-subsection">
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Name</div>
+                <div class="mm-d-c">Source</div>
+                <div class="mm-d-c">Target</div>
+                <div class="mm-d-g-c-m-3"><div class="mm-spacer-xs"></div></div>
+                <!--  wrapper end mm-d-g-c-m-3 - end -->
+                <div class="mm-d-v mm-d-v-s">
+                  <a
+                    href="index.html?page=References&item=itm-3a8f9d5b-5a92-4495-b570-6b10c2c52b23"
+                    >notifications_email</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-ddc8169b-05fb-4987-b92d-3a932924977c"
+                    >Users</a
+                  >
+                </div>
+                <div class="mm-d-v">
+                  <a
+                    href="index.html?page=Schemas&item=itm-b137954d-ebfc-40ec-be07-9ad274a384d4"
+                    >Notifications</a
+                  >
+                </div>
+                <div class="mm-d-c">Cardinality type:</div>
+                <div class="mm-d-v">One to</div>
+                <div class="mm-d-v">many</div>
+                <div class="mm-d-c">Ordinality:</div>
+                <div class="mm-d-v">Mandatory</div>
+                <div class="mm-d-v">Mandatory</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+            <div class="mm-subsection">
+              <div class="mm-subtitle">Key and properties</div>
+              <div class="mm-d-g-3">
+                <div class="mm-d-c">Key name</div>
+                <div class="mm-d-c">Property in Users</div>
+                <div class="mm-d-c">Property in Notifications</div>
+                <div class="mm-d-v mm-d-v-s">Users_ai_4</div>
+                <div class="mm-d-v">notifications</div>
+                <div class="mm-d-v">email</div>
+              </div>
+              <!--  wrapper end mm-d-g-3 - end -->
+            </div>
+            <!--  wrapper end mm-subsection - end -->
+          </div>
         </div>
         <!--  section References - end --><!-- section Lines - start -->
         <div class="mm-section" id="mm-section-Lines"></div>
@@ -7138,6 +7552,26 @@
                   <strong>Project Managment Data Modelling</strong>
                 </h1>
                 <h1><br /></h1>
+              </div>
+            </div>
+          </div>
+          <div
+            id="detail-itm-5127e764-9bc6-42d8-9e67-0eb6212f2cf0"
+            class="mm-detail"
+          >
+            <div class="mm-d-i">
+              <div class="mm-d-c-i">Name</div>
+              <div class="mm-d-v-i">note1</div>
+            </div>
+            <div class="mm-d-ver mm-d-i">
+              <div class="mm-d-c-l">Note</div>
+              <div class="mm-d-v-l">
+                <h3 class="ql-align-center">
+                  <strong
+                    >*Beta version of project management mongoose data
+                    model</strong
+                  >
+                </h3>
               </div>
             </div>
           </div>
